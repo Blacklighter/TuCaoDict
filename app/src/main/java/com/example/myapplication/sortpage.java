@@ -13,9 +13,9 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.yinglan.shadowimageview.ShadowImageView;
 
 public class sortpage extends AppCompatActivity {
 
@@ -52,11 +52,11 @@ public class sortpage extends AppCompatActivity {
 
     private void addOneKind(String name,String img){
         LinearLayout all = (LinearLayout)findViewById(R.id.all);
-        LinearLayout oneKind = (LinearLayout) getLayoutInflater().inflate(R.layout.kind,null);
-        ShadowImageView shadow = oneKind.findViewById(R.id.shadow);
-        shadow.setImageDrawable(getResources().getDrawable(R.mipmap.two));
-        shadow.setImageShadowColor(getResources().getColor(R.color.colorPrimary) );
-        shadow.setImageRadius(20);
+        RelativeLayout oneKind = (RelativeLayout) getLayoutInflater().inflate(R.layout.kind,null);
+//        ShadowImageView shadow = oneKind.findViewById(R.id.frame).findViewById(R.id.shadow);
+//        shadow.setImageDrawable(getResources().getDrawable(R.mipmap.two));
+
+//        shadow.setImageRadius(20);
 
         if(all.getChildCount() > 0){
             LinearLayout lastRow = (LinearLayout)all.getChildAt(all.getChildCount()-1);

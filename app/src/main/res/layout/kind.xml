@@ -1,39 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/kind"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="115dp"
+<RelativeLayout android:id="@+id/kind"
     android:layout_weight="1"
-    android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
-    android:layout_height="115dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <com.yinglan.shadowimageview.ShadowImageView
-        android:id="@+id/shadow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginLeft="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="27dp"
-        app:shadowColor="#C7C7C7"
-        />
-<!--        <ImageButton-->
-<!--            android:id="@+id/Buttonone"-->
-<!--            android:foreground="@drawable/kind_shape"-->
-<!--            android:layout_width="115dp"-->
-<!--            android:layout_height="115dp"-->
-<!--            android:layout_marginLeft="27dp"-->
-<!--            android:layout_marginRight="27dp"-->
-<!--            android:layout_marginBottom="5dp"-->
-<!--            android:layout_marginTop="27dp"-->
-<!--            android:src="@mipmap/two"-->
-<!--            />-->
+        android:id="@+id/kindImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:shadowRound="15dp"
+        app:shadowSrc="@drawable/two"
+        app:shadowColor="@color/shadow"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="分类一"
-        android:textSize="20sp" />
-</LinearLayout>
+        android:layout_marginTop="-30dp"
+        android:layout_below="@+id/kindImg"
+        android:layout_centerHorizontal="true"
+        android:text="人物"></TextView>
+
+
+
+
+</RelativeLayout>
