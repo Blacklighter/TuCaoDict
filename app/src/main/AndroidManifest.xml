@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission> //开启网络选项
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
