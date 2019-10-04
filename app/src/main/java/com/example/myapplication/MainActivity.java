@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,6 +17,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,23 +50,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void test(){
-        try {
-            URL url = new URL("http://www.blacklighter.cn/test.py");
-            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-            InputStream inputStream = httpURLConnection.getInputStream();
-            InputStreamReader reader = new InputStreamReader(inputStream,"UTF-8");
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            StringBuffer buffer = new StringBuffer();
-            String temp = null;
-            while ((temp = bufferedReader.readLine()) != null) {
-                buffer.append(temp);
-            }
-            bufferedReader.close();
-            reader.close();
-            inputStream.close();
-            Log.e("TEST:",buffer.toString());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        String url = "http://www.blacklighter.cn/test.py";
+        OkHttpClient okHttpClient = new OkHttpClient();
+
+        RequestBody body = new FormBody.Builder().add("name","haha").build();
+        Request request = new Request.Builder().url(url).post(body).build();
+        try{
+            Response response = okHttpClient.newCall(request).execute();
+            Log.e("TEST:", response.body().string());
         } catch (IOException e) {
             e.printStackTrace();
         }
