@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -23,6 +26,7 @@ import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -43,26 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        test();
-                    }
-                }).start();
+                        Log.e("TEST",""+Utils.mysql("INsert INTO users (Telephone,ID,Nickname) Values (15172609839, 4,'haha')",true));
+            }
+        }).start();
             }
         });
     }
 
-    private void test(){
-        String url = "http://www.blacklighter.cn/test.py";
-        OkHttpClient okHttpClient = new OkHttpClient();
-
-        RequestBody body = new FormBody.Builder().add("name","haha").build();
-        Request request = new Request.Builder().url(url).post(body).build();
-        try{
-            Response response = okHttpClient.newCall(request).execute();
-            Log.e("TEST:", response.body().string());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 
