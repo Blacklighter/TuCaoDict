@@ -7,21 +7,29 @@
     android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.yinglan.shadowimageview.ShadowImageView
-        android:id="@+id/kindImg"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:shadowRound="15dp"
-        app:shadowSrc="@drawable/two"
-        app:shadowColor="@color/shadow"/>
+
+        <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
+            android:id="@+id/kindImg"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:src="@drawable/two"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            app:shape_mode="round_rect"
+            app:round_radius="20dp"
+            app:stroke_color="#A3A0A0"
+            app:stroke_width="3dp"
+            />
 
     <TextView
+        android:id="@+id/kindText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-30dp"
         android:layout_below="@+id/kindImg"
         android:layout_centerHorizontal="true"
-        android:text="人物"></TextView>
+        android:text="人物"
+        android:textSize="20sp"></TextView>
+
 
 
 
