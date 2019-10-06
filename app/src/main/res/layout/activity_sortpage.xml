@@ -17,14 +17,18 @@ android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
+        <com.nex3z.flowlayout.FlowLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/all"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            app:flChildSpacing="auto"
+            app:flChildSpacingForLastRow="auto"
+            app:flRowSpacing="20dp">
 
-        </LinearLayout>
+
+        </com.nex3z.flowlayout.FlowLayout>
+
     </ScrollView>
 
 </LinearLayout>
