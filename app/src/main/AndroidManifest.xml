@@ -17,7 +17,6 @@
         <activity android:name=".sortpage">
 
         </activity>
-<<<<<<< HEAD
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -26,9 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-=======
-        <activity android:name=".MainActivity"></activity>
->>>>>>> 40a5f817b6441b03c5914ae4a6d20fcaeb7bfb86
     </application>
 
 </manifest>
