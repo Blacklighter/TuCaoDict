@@ -26,7 +26,6 @@ dependencies {
 
     implementation 'cn.gavinliu:ShapedImageView:0.8.6'
     implementation 'com.nex3z:flow-layout:1.3.0'
-    implementation 'com.droidninja:filepicker:2.2.1'
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
     testImplementation 'junit:junit:4.12'

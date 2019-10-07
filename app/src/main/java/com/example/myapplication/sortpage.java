@@ -3,23 +3,14 @@ package com.example.myapplication;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nex3z.flowlayout.FlowLayout;
 import com.squareup.picasso.Picasso;
@@ -48,16 +39,14 @@ public class sortpage extends AppCompatActivity {
        // ImageButton buttonone=findViewById(R.id.Buttonone);
 
 
-        String[] names=getKinds();
+        ArrayList<String> names=getKinds();
 
-        for (String name:names){
-            Log.e("fdasas",name+"\n");
-        }
 
-        String[] img =getImage();
+
+        ArrayList<String> img =getImgs();
 
         for(int i = 0; i <  3; i++){
-            addOneKind(names[i],img[i]);
+            addOneKind(names.get(i),img.get(i));
         }
 
 
@@ -72,12 +61,10 @@ public class sortpage extends AppCompatActivity {
 //        });
     }
 
-    private String[] getKinds(){
-//        String[] name = {"fd","fdafa","fdsgsg"};
-        JSONArray rows = Utils.mysql("SELECT * FROM entry_kinds",true);
+    private ArrayList<String> getKinds(){
+        JSONArray rows = Utils.mysql("SELECT * FROM entry_kinds");
         ArrayList<String> arrayList = new ArrayList<>();
 
-//            Log.e("TEST","当前有"+rows.length()+"个用户已注册，他们的手机号分别为：\n");
             for(int i = 0; i < rows.length(); i++){
                 try {
                     JSONObject row = rows.getJSONObject(i);
@@ -87,14 +74,24 @@ public class sortpage extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-//                Log.e("TEST",telephone+"\n");
             }
-
-        return (String[])arrayList.toArray();
+        return arrayList;
     }
-    private String[] getImage(){
-       String[] img={"https://i01piccdn.sogoucdn.com/5e58f2161a140620","https://i01piccdn.sogoucdn.com/893c986280c0d7dd","https://i02piccdn.sogoucdn.com/e3fd076be9b8374c"};
-        return img;
+    private ArrayList<String> getImgs(){
+        JSONArray rows = Utils.mysql("SELECT * FROM entry_kinds");
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for(int i = 0; i < rows.length(); i++){
+            try {
+                JSONObject row = rows.getJSONObject(i);
+                String kind_img = null;
+                kind_img = row.getString("kind_img");
+                arrayList.add(kind_img);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return arrayList;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -123,7 +120,7 @@ public class sortpage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(sortpage.this,SortPageNext.class);
                 Bundle bundle=new Bundle();
-                TextView textView=findViewById(R.id.kindText);
+                TextView textView=(TextView) (((RelativeLayout)v.getParent()).findViewById(R.id.kindText));
                 String classname=(String)textView.getText();
                 bundle.putCharSequence("classname",classname);
                 intent.putExtras(bundle);

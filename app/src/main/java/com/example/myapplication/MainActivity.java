@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +25,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import droidninja.filepicker.FilePickerBuilder;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        String string=bundle.getString("text");
+        Log.e("text",string);
 
 
         Button btn = (Button)findViewById(R.id.button);
@@ -47,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                FilePickerBuilder.getInstance().setMaxCount(5)
-                        .setActivityTheme(R.style.LibAppTheme)
-                        .pickPhoto(this);
 
             }
         });
