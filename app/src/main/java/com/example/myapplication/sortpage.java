@@ -24,6 +24,13 @@ import android.widget.Toast;
 import com.nex3z.flowlayout.FlowLayout;
 import com.squareup.picasso.Picasso;
 
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 import cn.gavinliu.android.lib.shapedimageview.ShapedImageView;
 
 
@@ -41,11 +48,16 @@ public class sortpage extends AppCompatActivity {
        // ImageButton buttonone=findViewById(R.id.Buttonone);
 
 
-        String[] name=getKinds();
+        String[] names=getKinds();
+
+        for (String name:names){
+            Log.e("fdasas",name+"\n");
+        }
+
         String[] img =getImage();
 
         for(int i = 0; i <  3; i++){
-            addOneKind(name[i],img[i]);
+            addOneKind(names[i],img[i]);
         }
 
 
@@ -61,11 +73,27 @@ public class sortpage extends AppCompatActivity {
     }
 
     private String[] getKinds(){
-        String[] name = {"fd","fdafa","fdsgsg"};
-        return name;
+//        String[] name = {"fd","fdafa","fdsgsg"};
+        JSONArray rows = Utils.mysql("SELECT * FROM entry_kinds",true);
+        ArrayList<String> arrayList = new ArrayList<>();
+
+//            Log.e("TEST","当前有"+rows.length()+"个用户已注册，他们的手机号分别为：\n");
+            for(int i = 0; i < rows.length(); i++){
+                try {
+                    JSONObject row = rows.getJSONObject(i);
+                    String kind_name = null;
+                    kind_name = row.getString("kind_name");
+                    arrayList.add(kind_name);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+//                Log.e("TEST",telephone+"\n");
+            }
+
+        return (String[])arrayList.toArray();
     }
     private String[] getImage(){
-        String[] img={"https://i01piccdn.sogoucdn.com/5e58f2161a140620","https://i01piccdn.sogoucdn.com/893c986280c0d7dd","https://i02piccdn.sogoucdn.com/e3fd076be9b8374c"};
+       String[] img={"https://i01piccdn.sogoucdn.com/5e58f2161a140620","https://i01piccdn.sogoucdn.com/893c986280c0d7dd","https://i02piccdn.sogoucdn.com/e3fd076be9b8374c"};
         return img;
     }
 
@@ -94,47 +122,14 @@ public class sortpage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(sortpage.this,SortPageNext.class);
+                Bundle bundle=new Bundle();
+                TextView textView=findViewById(R.id.kindText);
+                String classname=(String)textView.getText();
+                bundle.putCharSequence("classname",classname);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 sortpage.this.finish();
             }
         });
-       // ImageView targetImageView = (ImageView) findViewById(R.id.ImageView);
-       // String Url = "http://218.192.170.132/1.jpg";
-
-       // Picasso
-           //     .with(this)
-         //       .load(Url)
-           //     .into(targetImageView);
-//        shadow.setImageRadius(20);
-
-//        if(all.getChildCount() > 0){
-//            LinearLayout lastRow = (LinearLayout)all.getChildAt(all.getChildCount()-1);
-//
-//
-//            if(lastRow.getChildCount()%2 == 0){
-//               // LinearLayout row = new LinearLayout(this);
-//              //  row.setOrientation(LinearLayout.HORIZONTAL);
-//              //  row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-//               // row.setGravity(Gravity.CENTER);
-//              //  row.addView(oneKind);
-//              //  all.addView(row);
-//            }
-//            else{
-//                lastRow.addView(oneKind);
-//            }
-//        }
-//        else{
-//            LinearLayout row = new LinearLayout(this);
-//            row.setGravity(Gravity.);
-//           // row.setGravity(Gravity.CENTER);
-//            row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT));
-//            row.setOrientation(LinearLayout.HORIZONTAL);
-//            row.addView(oneKind);
-//            all.addView(row);
-//        }
-
-
-
-        // grid.getChildAt()
     }
 }
