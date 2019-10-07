@@ -13,7 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
+        <activity android:name=".SortPageNext"></activity>
+        <activity android:name=".sortpage"></activity>
+        <activity android:name=".MineActivity" >
+=======
         <activity android:name=".SortPageNext">
+>>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
 
         </activity>
         <activity android:name=".sortpage">
@@ -24,9 +30,12 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
+=======
         <activity android:name=".MainActivity">
 
         </activity>
+>>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
     </application>
 
 </manifest>

@@ -2,12 +2,20 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
+import android.media.Image;
+=======
 import android.app.Activity;
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+>>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
+>>>>>>> d6ac82212445fedb7cfbdd4e42083771932ae317
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -44,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle=intent.getExtras();
         String string=bundle.getString("text");
         Log.e("text",string);
-
 
         Button btn = (Button)findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
