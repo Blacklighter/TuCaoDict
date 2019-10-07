@@ -10,6 +10,7 @@ import android.view.WindowManager;
 public class MyApplication extends Application {
     private int width;
     private int height;
+    
 
     @Override
     public void onCreate() {

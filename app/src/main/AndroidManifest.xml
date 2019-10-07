@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SortPageNext"></activity>
-        <activity android:name=".sortpage">
+        <activity android:name=".sortpage"></activity>
+        <activity android:name=".MineActivity" >
 
         </activity>
 
@@ -25,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
