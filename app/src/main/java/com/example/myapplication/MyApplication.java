@@ -31,4 +31,5 @@ public class MyApplication extends Application {
     public int getHeight() {
         return height;
     }
+
 }
