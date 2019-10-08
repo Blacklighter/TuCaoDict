@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent=getIntent();
-        Bundle bundle=intent.getExtras();
-        String string=bundle.getString("text");
-        Log.e("text",string);
+//        Intent intent=getIntent();
+//        Bundle bundle=intent.getExtras();
+//        String string=bundle.getString("text");
+//        Log.e("text",string);//获取点击了哪一个分类列表的词条名。
 
         Button btn = (Button)findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
