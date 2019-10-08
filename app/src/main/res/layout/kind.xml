@@ -27,7 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/kindImg"
         android:layout_centerHorizontal="true"
-        android:text="人物"
         android:textSize="20sp"></TextView>
 
 
