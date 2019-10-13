@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:background="@mipmap/logo"
+    tools:context=".HotWordActivity">
+
+    <!--最上方按钮处水平布局-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:background=""
+            tools:srcCompat="@mipmap/return_now" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background=""
+            app:srcCompat="@mipmap/write" />
+    </RelativeLayout>
+
+    <!--总标题-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_line"
+        android:layout_gravity="left"
+        android:layout_marginTop="5dp"
+        android:gravity="left"
+        android:padding="0dp"
+        android:text="海南大学"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold" />
+
+    <!--标题下部的关联分类-->
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/my_flowLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flFlow="false"
+        app:flChildSpacing="8dp"
+        app:flRowSpacing="8dp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <!--实验标签-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相关分类"
+            android:textSize="11dp"
+            android:background="@drawable/hot_word_tag_shape"/>
+
+    </com.nex3z.flowlayout.FlowLayout>
+
+    <!--基本解释-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/meaning_shape"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <!--系统文字与点赞等按钮水平线性布局-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--小标题-->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="60dp"
+                android:text="基本释义" />
+
+            <!--点赞按钮-->
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:layout_marginRight="30dp"
+                android:background=""
+                android:layout_marginTop="2dp"
+                app:srcCompat="@mipmap/good" />
+
+            <!--不喜欢按钮-->
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background=""
+                app:srcCompat="@mipmap/bad" />
+        </RelativeLayout>
+
+        <!--释义内容-->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+    </LinearLayout>
+
+    <!--相关资料-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/meaning_shape"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <!--小标题，与点赞按钮的相对布局-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--小标题-->
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:text="相关资料" />
+
+            <!--点赞按钮-->
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:layout_marginRight="30dp"
+                android:background=""
+                android:layout_marginTop="2dp"
+                app:srcCompat="@mipmap/good" />
+
+            <!--不喜欢按钮-->
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background=""
+                app:srcCompat="@mipmap/bad" />
+        </RelativeLayout>
+
+        <!--“相关资料”翻页视图-->
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+    </LinearLayout>
+
+    <!--适用情形-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/meaning_shape"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--小标题-->
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:text="适用情形" />
+
+            <!--点赞按钮-->
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:layout_marginRight="30dp"
+                android:background=""
+                android:layout_marginTop="2dp"
+                app:srcCompat="@mipmap/good" />
+
+            <!--不喜欢按钮-->
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background=""
+                app:srcCompat="@mipmap/bad" />
+
+        </RelativeLayout>
+
+        <!--“适用情形”翻页视图-->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/TextViewPager1"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
