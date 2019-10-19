@@ -15,10 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".SortPageNext"></activity>
         <activity android:name=".sortpage"></activity>
-<<<<<<< HEAD
+
         <activity
             android:name="com.liuguangqiang.ipicker.IPickerActivity"
             android:screenOrientation="portrait"
@@ -41,8 +41,6 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
-=======
         <activity android:name=".MainActivity">
 
         </activity>

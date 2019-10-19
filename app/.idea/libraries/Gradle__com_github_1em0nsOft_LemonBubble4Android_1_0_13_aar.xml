@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.1em0nsOft:LemonBubble4Android:1.0.13@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13595f2755a3bfa37c1e2f2cc6ceaded/jetified-LemonBubble4Android-1.0.13/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/13595f2755a3bfa37c1e2f2cc6ceaded/jetified-LemonBubble4Android-1.0.13/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
