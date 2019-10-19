@@ -15,6 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +32,7 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         String classname=bundle.getString("classname");
-        addList(getText("classname"));
+        addList(getText(classname));
         Button backbutton=(Button)findViewById(R.id.backbutton);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,16 +44,27 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         });
 
     }
-    private void addList(String[] name){
-        Log.e("TST","dafasfaas");
+    private void addList(ArrayList<String> name){
         ListView mylistview=(ListView)findViewById(R.id.listview);
         ArrayAdapter<String> myAdapter=new ArrayAdapter<String>(SortPageNext.this,R.layout.sortpagetext,R.id.textview,name);
         mylistview.setAdapter(myAdapter);
         mylistview.setOnItemClickListener(this);
     }
-    private String[] getText(String classname){
-        String text[]={"蔡徐坤","罗志祥","小猪","panyuanm","ssdhd","sidjjjd"};
-        return  text;
+    private ArrayList<String> getText(String classname){
+        JSONArray rows = Utils.mysql("SELECT * FROM entry_overview WHERE entry_kinds like '%"+classname+"%'" );
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for(int i = 0; i < rows.length(); i++){
+            try {
+                JSONObject row = rows.getJSONObject(i);
+                String entry_name = null;
+                entry_name = row.getString("entry_name");
+                arrayList.add(entry_name);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return arrayList;
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -58,8 +73,8 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         String string;
         TextView textView=(TextView)(view.findViewById(R.id.textview));
         string=(String)textView.getText();
-        Log.e("text",string);
         bundle.putCharSequence("text",string);
+        intent.putExtras(bundle);
         startActivity(intent);
         SortPageNext.this.finish();
     }
