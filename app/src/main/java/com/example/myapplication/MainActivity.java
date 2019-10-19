@@ -2,11 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
+
 import android.media.Image;
-=======
 import android.app.Activity;
->>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +27,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import droidninja.filepicker.FilePickerBuilder;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -51,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                FilePickerBuilder.getInstance().setMaxCount(5)
-                        .setActivityTheme(R.style.LibAppTheme)
-                        .pickPhoto(this);
 
             }
         });
