@@ -11,54 +11,87 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.nex3z.flowlayout.FlowLayout;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView headLine;//标题
+    private ImageButton cameraButton;//相机按钮
+    private EditText findEditText;//输入框
+    private ImageButton findButton;//搜索按钮
+    private com.nex3z.flowlayout.FlowLayout relevantContent;//热点词条
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //从布局文件中获取名为editText的文本输入框,以及搜索按钮button,下方推荐热词布局
-        EditText editText = findViewById(R.id.editText);
-        ImageButton button = findViewById(R.id.imageButton2);
-        com.nex3z.flowlayout.FlowLayout my_flowLayout = findViewById(R.id.my_flowLayout);
+        //从布局文件中获取所有的View
+        this.headLine = (TextView)findViewById(R.id.head_line);
+        this.cameraButton = (ImageButton)findViewById(R.id.camera_button);
+        this.findEditText = (EditText)findViewById(R.id.find_edit);
+        this.findButton = (ImageButton)findViewById(R.id.find_button);
+        this.relevantContent = (com.nex3z.flowlayout.FlowLayout)findViewById(
+                R.id.relevant_content_part);
 
-        //点击事件
-        button.setOnClickListener(this);
-
-        //全屏显示
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //设置相机、搜索点击事件监听器
+        this.cameraButton.setOnClickListener(
+                new CameraButtonOnClickListener(this.cameraButton,this));
+        this.findButton.setOnClickListener(
+                new FindButtonOnClickListener(this.findButton,this));
 
     }//onCreate
 
-    @Override
-    public void onClick(View v){
-
-        if(v.getId() == R.id.imageButton2){//如果点击了搜索按钮
-            //获取文本输入框并获得其文字
-            String string = ((EditText)findViewById(R.id.editText)).getText().toString();
-            //新的标签
-            TextView t = new TextView(this);
-            Drawable drawable = getResources().getDrawable(R.drawable.tag_shape);
-            t.setBackground(drawable);
-            //t.setHeight(100);
-            //t.setWidth(400);
-            t.setText(string);
-            com.nex3z.flowlayout.FlowLayout flowLayout = findViewById(R.id.my_flowLayout);
-            flowLayout.addView(t);
-        }//if
+    //点击了“相机”按钮
+    public void clickCameraButton(){
 
     }
 
-    //当用户点击了搜索按钮时触发方法goToSearch
-    protected void goToSearch(String s){
+    //点击了“搜索”按钮
+    public void clickFindButton(){
 
-    }//goToSearch
+    }
 
-    //显示热词方法,传入热词显示的流式布局
-    protected void showHotWord(com.nex3z.flowlayout.FlowLayout flowLayout){
 
-    }//showHotWord
+    //set、get
+    public ImageButton getCameraButton() {
+        return cameraButton;
+    }
+
+    public TextView getHeadLine() {
+        return headLine;
+    }
+
+    public EditText getFindEditText() {
+        return findEditText;
+    }
+
+    public FlowLayout getRelevantContent() {
+        return relevantContent;
+    }
+
+    public ImageButton getFindButton() {
+        return findButton;
+    }
+
+    public void setCameraButton(ImageButton cameraButton) {
+        this.cameraButton = cameraButton;
+    }
+
+    public void setRelevantContent(FlowLayout relevantContent) {
+        this.relevantContent = relevantContent;
+    }
+
+    public void setHeadLine(TextView headLine) {
+        this.headLine = headLine;
+    }
+
+    public void setFindButton(ImageButton findButton) {
+        this.findButton = findButton;
+    }
+
+    public void setFindEditText(EditText findEditText) {
+        this.findEditText = findEditText;
+    }
 
 }

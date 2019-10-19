@@ -10,111 +10,76 @@
 
         <!--首页的大文字-->
         <TextView
+            android:id="@+id/head_line"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:id="@+id/textView"
-            android:layout_width="191dp"
-            android:layout_height="61dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="吐槽百科词典"
-            android:layout_marginTop="5dp"
-            android:textSize="30sp" />
+            android:layout_marginTop="10dp"
+            android:textSize="30dp" />
 
         <!--首页存放搜索一栏的线性布局-->
         <LinearLayout
+            android:id="@+id/find_layout"
             android:layout_centerInParent="true"
-            android:layout_width="380dp"
-            android:layout_height="53dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="250dp"
             android:background="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
             <!--左侧的按钮-->
             <ImageButton
-                android:id="@+id/imageButton1"
-                android:layout_width="15dp"
-                android:layout_height="match_parent"
+                android:id="@+id/camera_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_weight="1"
                 android:background="@color/white"
-                app:srcCompat="@mipmap/logo1" />
+                app:srcCompat="@mipmap/camera_button" />
 
             <!--文字输入处-->
             <EditText
-                android:id="@+id/editText"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
+                android:id="@+id/find_edit"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
+                android:ems="5"
+                android:textSize="20dp"
                 android:focusable="auto"
                 android:inputType="textPersonName"
                 android:hint="吐槽热词..."
                 android:text="" />
 
-            <!--右侧的按钮-->
+            <!--搜索按钮-->
             <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="15dp"
-                android:layout_height="match_parent"
+                android:id="@+id/find_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_weight="1"
                 android:background="@color/white"
-                app:srcCompat="@mipmap/sosuo" />
+                app:srcCompat="@mipmap/find_button" />
 
         </LinearLayout>
 
     <!--底部系统推荐热词-->
     <com.nex3z.flowlayout.FlowLayout
-        android:id="@+id/my_flowLayout"
+        android:id="@+id/relevant_content_part"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:flFlow="true"
         app:flChildSpacing="8dp"
         app:flRowSpacing="8dp"
         android:padding="10dp"
-        android:layout_marginBottom="100dp"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:background="@drawable/tag_shape"
-            android:text="SUN发大水发撒放砂锅上的" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:background="@drawable/tag_shape"
-            android:text="MON" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:background="@drawable/tag_shape"
-            android:text="SUN" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:background="@drawable/tag_shape"
-            android:text="MON" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:background="@drawable/tag_shape"
-            android:text="SUN" />
+        android:layout_marginBottom="50dp">
 
     </com.nex3z.flowlayout.FlowLayout>
+
 </RelativeLayout>

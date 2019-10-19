@@ -15,28 +15,30 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/return_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
-            android:background=""
-            tools:srcCompat="@mipmap/return_now" />
+            android:layout_weight="1"
+            android:background="#00000000"
+            app:srcCompat="@mipmap/return_now" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/writing_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:background=""
+            android:background="#00000000"
             app:srcCompat="@mipmap/write" />
+
     </RelativeLayout>
 
     <!--总标题-->
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/head_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/text_line"
@@ -47,11 +49,12 @@
         android:text="海南大学"
         android:textSize="20dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:textStyle="bold" />
 
     <!--标题下部的关联分类-->
     <com.nex3z.flowlayout.FlowLayout
-        android:id="@+id/my_flowLayout"
+        android:id="@+id/correlation_with_this"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,196 +77,539 @@
 
     </com.nex3z.flowlayout.FlowLayout>
 
-    <!--基本解释-->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/meaning_shape"
-        android:orientation="vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_height="wrap_content">
 
-        <!--系统文字与点赞等按钮水平线性布局-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <!--小标题-->
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="1dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="60dp"
-                android:text="基本释义" />
-
-            <!--点赞按钮-->
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_weight="1"
-                android:layout_marginRight="30dp"
-                android:background=""
-                android:layout_marginTop="2dp"
-                app:srcCompat="@mipmap/good" />
-
-            <!--不喜欢按钮-->
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background=""
-                app:srcCompat="@mipmap/bad" />
-        </RelativeLayout>
-
-        <!--释义内容-->
-        <TextView
-            android:id="@+id/textView4"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:orientation="vertical" >
 
-    </LinearLayout>
-
-    <!--相关资料-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/meaning_shape"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-        <!--小标题，与点赞按钮的相对布局-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <!--小标题-->
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+            <!--基本解释-->
+            <LinearLayout
+                android:id="@+id/meaning"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="60dp"
-                android:layout_marginTop="1dp"
-                android:layout_weight="1"
-                android:text="相关资料" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/meaning_shape"
+                android:orientation="vertical">
 
-            <!--点赞按钮-->
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_weight="1"
-                android:layout_marginRight="30dp"
-                android:background=""
-                android:layout_marginTop="2dp"
-                app:srcCompat="@mipmap/good" />
+                <!--系统文字与点赞等按钮水平线性布局-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <!--不喜欢按钮-->
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background=""
-                app:srcCompat="@mipmap/bad" />
-        </RelativeLayout>
+                    <!--小标题-->
+                    <TextView
+                        android:id="@+id/meaning_headLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_weight="1"
+                        android:text="基本释义"
+                        android:textSize="20dp" />
 
-        <!--“相关资料”翻页视图-->
-        <androidx.viewpager.widget.ViewPager
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
+                    <!--点赞按钮-->
+                    <ImageButton
+                        android:id="@+id/good_button_for_meaning"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/good" />
 
-    </LinearLayout>
+                    <!--点赞数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_good_for_meaning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_weight="2"
+                        android:text=""
+                        android:textSize="8dp" />
 
-    <!--适用情形-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/meaning_shape"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+                    <!--不喜欢按钮-->
+                    <ImageButton
+                        android:id="@+id/bad_button_for_meaning"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bad" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <!--不喜欢数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_bad_for_meaning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="2"
+                        android:text=""
+                        android:textSize="8dp" />
 
-            <!--小标题-->
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+
+                </RelativeLayout>
+
+                <!--释义内容-->
+                <TextView
+                    android:id="@+id/meaning_text_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <!--相关资料-->
+            <LinearLayout
+                android:id="@+id/material"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="60dp"
-                android:layout_marginTop="1dp"
-                android:layout_weight="1"
-                android:text="适用情形" />
+                android:background="@drawable/meaning_shape"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
-            <!--点赞按钮-->
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_weight="1"
-                android:layout_marginRight="30dp"
-                android:background=""
-                android:layout_marginTop="2dp"
-                app:srcCompat="@mipmap/good" />
+                <!--小标题，与点赞按钮的相对布局-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <!--不喜欢按钮-->
-            <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background=""
-                app:srcCompat="@mipmap/bad" />
+                    <!--小标题-->
+                    <TextView
+                        android:id="@+id/material_head_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:text="相关资料" />
 
-        </RelativeLayout>
+                    <!--点赞按钮-->
+                    <ImageButton
+                        android:id="@+id/good_button_for_material"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="1"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/good" />
 
-        <!--“适用情形”翻页视图-->
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/TextViewPager1"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp" />
+                    <!--点赞数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_good_for_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
 
-    </LinearLayout>
+                    <!--不喜欢按钮-->
+                    <ImageButton
+                        android:id="@+id/bad_button_for_material"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bad" />
+
+                    <!--不喜欢数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_bad_for_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <!--“相关资料”翻页视图-->
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/material_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
+
+            <!--适用情形-->
+            <LinearLayout
+                android:id="@+id/condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/meaning_shape"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--小标题-->
+                    <TextView
+                        android:id="@+id/condition_head_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:text="适用情形" />
+
+                    <!--点赞按钮-->
+                    <ImageButton
+                        android:id="@+id/good_button_for_condition"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="1"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/good" />
+
+                    <!--点赞数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_good_for_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                    <!--不喜欢按钮-->
+                    <ImageButton
+                        android:id="@+id/bad_button_for_condition"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bad" />
+
+                    <!--不喜欢数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_bad_for_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <!--“适用情形”翻页视图-->
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/condition_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+            </LinearLayout>
+
+            <!--来龙去脉-->
+            <LinearLayout
+                android:id="@+id/source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/meaning_shape"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <!--小标题，与点赞按钮的相对布局-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--小标题-->
+                    <TextView
+                        android:id="@+id/source_head_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:text="来龙去脉" />
+
+                    <!--点赞按钮-->
+                    <ImageButton
+                        android:id="@+id/good_button_for_source"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="1"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/good" />
+
+                    <!--点赞数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_good_for_source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                    <!--不喜欢按钮-->
+                    <ImageButton
+                        android:id="@+id/bad_button_for_source"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bad" />
+
+                    <!--不喜欢数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_bad_for_source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <!--“来龙去脉”翻页视图-->
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/source_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
+
+            <!--范例-->
+            <LinearLayout
+                android:id="@+id/example"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/meaning_shape"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <!--小标题，与点赞按钮的相对布局-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--小标题-->
+                    <TextView
+                        android:id="@+id/example_head_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:text="范例" />
+
+                    <!--点赞按钮-->
+                    <ImageButton
+                        android:id="@+id/good_button_for_example"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="1"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/good" />
+
+                    <!--点赞数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_good_for_example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                    <!--不喜欢按钮-->
+                    <ImageButton
+                        android:id="@+id/bad_button_for_example"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bad" />
+
+                    <!--不喜欢数量显示-->
+                    <TextView
+                        android:id="@+id/num_of_bad_for_example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <!--“范例”翻页视图-->
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/example_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
+
+            <!--关联槽点-->
+            <LinearLayout
+                android:id="@+id/relevant_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/meaning_shape"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <!--小标题-->
+                <TextView
+                    android:id="@+id/relevant_content_head_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:text="相关槽点" />
+
+                <!--底部系统相关热词-->
+                <com.nex3z.flowlayout.FlowLayout
+                    android:id="@+id/relevant_content_part"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:flFlow="true"
+                    app:flChildSpacing="8dp"
+                    app:flRowSpacing="8dp"
+                    android:padding="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    >
+
+                </com.nex3z.flowlayout.FlowLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="我是有底线的~~~" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
