@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/kind"
+    android:layout_weight="1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
+            android:id="@+id/kindImg"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:src="@drawable/two"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            app:shape_mode="round_rect"
+            app:round_radius="20dp"
+            app:stroke_color="#A3A0A0"
+            app:stroke_width="3dp"
+            />
+
+    <TextView
+        android:id="@+id/kindText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kindImg"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"></TextView>
+
+
+
+
+
+</RelativeLayout>
