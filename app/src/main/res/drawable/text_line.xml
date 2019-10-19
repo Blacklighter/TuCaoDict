@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line"
+    android:layout_gravity="bottom">
+
+
+
+    <!--直线的宽度和颜色-->
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorPrimaryDark"/>
+
+</shape>

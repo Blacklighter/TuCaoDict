@@ -2,16 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,8 +16,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class SortPageNext extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -37,7 +31,7 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SortPageNext.this,sortpage.class);
+                Intent intent=new Intent(SortPageNext.this, SortPage.class);
                 startActivity(intent);
                 SortPageNext.this.finish();
             }
