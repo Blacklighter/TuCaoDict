@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -35,7 +36,7 @@ public class MineActivity extends AppCompatActivity {
 
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // 创建一个list集合
 
-        TextView mineText = (TextView)listview.findViewById(R.id.moudle);
+        TextView mineText = (TextView)listview.findViewById(R.id.module);
         // 通过for循环将图片id和列表项文字放到Map中，并添加到list集合中
         for (int i = 0; i < imageId.length; i++) {
             Map<String, Object> map = new HashMap<String, Object>(); // 实例化Map对象
@@ -44,10 +45,14 @@ public class MineActivity extends AppCompatActivity {
 
             listItems.add(map); // 将map对象添加到List集合中
         }
+        for(Map<String, Object> map:listItems){
+            for(String key: map.keySet())
+            Log.e("TEST",""+map.get(key));
+        }
 
         SimpleAdapter adapter = new SimpleAdapter(this, listItems,
-                R.layout.mine, new String[] { "moudle", "image" }, new int[] {
-                R.id.moule, R.id.image }); // 创建SimpleAdapter
+                R.layout.mine, new String[] {"image" , "moudle"}, new int[] {
+                R.id.image, R.id.module }); // 创建SimpleAdapter
 
         listview.setAdapter(adapter);       // 将适配器与ListView关联
 

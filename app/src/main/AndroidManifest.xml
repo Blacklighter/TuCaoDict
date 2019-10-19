@@ -25,26 +25,19 @@
             android:theme="@style/IPickerTheme" />
 
         <activity android:name=".MainActivity">
-=======
-        <activity android:name=".MineActivity" >
-=======
-        <activity android:name=".SortPageNext">
->>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
 
-        </activity>
-        <activity android:name=".sortpage">
->>>>>>> 36715cc90a7da4882601e5b1ae91abf25485a500
+        <activity android:name=".MineActivity" >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
-        <activity android:name=".MainActivity">
 
         </activity>
->>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
+
     </application>
 
 </manifest>
