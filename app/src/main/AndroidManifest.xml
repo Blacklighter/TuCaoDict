@@ -15,7 +15,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+        <activity android:name=".HotWordActivity">
+
+        </activity>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
         <activity android:name=".SortPageNext"></activity>
         <activity android:name=".SortPage"></activity>
 
@@ -24,8 +35,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/IPickerTheme" />
 
+<<<<<<< HEAD
         <activity android:name=".MainActivity"></activity>
 
+=======
+>>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
+        <activity android:name=".MainActivity">
+=======
+>>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
         <activity android:name=".MineActivity" >
 
 
