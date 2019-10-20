@@ -3,12 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-<<<<<<< HEAD
     <color name="white">#FFFFFF</color>
-=======
     <color name="shadow">#C0BEBE</color>
     <color name="sortpagetextcolor">#B8000000</color>
     <color name="sortpagebgcolor">#F2E03D</color>
     <color name="bgcolor">#B9D9E1EB</color>
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
 </resources>

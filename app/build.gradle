@@ -24,7 +24,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-<<<<<<< HEAD
 
     implementation 'com.nex3z:flow-layout:1.3.0'
     implementation 'com.nightonke:boommenu:2.1.1'
@@ -33,21 +32,13 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
-=======
     implementation 'cn.gavinliu:ShapedImageView:0.8.6'
     implementation 'com.nex3z:flow-layout:1.3.0'
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     implementation 'com.liuguangqiang.ipicker:library:1.0.1'
     implementation 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
     implementation 'com.github.1em0nsOft:LemonBubble4Android:1.0.13'
-=======
->>>>>>> 36715cc90a7da4882601e5b1ae91abf25485a500
->>>>>>> 41320e113ce267359428627e3ac5326c1a281517
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'

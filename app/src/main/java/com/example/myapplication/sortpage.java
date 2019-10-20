@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.myapplication.utils.Utils;
 import com.nex3z.flowlayout.FlowLayout;
 import com.squareup.picasso.Picasso;
 

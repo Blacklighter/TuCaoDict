@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <!--首页的大文字-->
+        <!--首页的“标题”-->
         <TextView
             android:id="@+id/head_line"
             android:layout_alignParentTop="true"
@@ -83,31 +82,29 @@
 
     </com.nex3z.flowlayout.FlowLayout>
 
+    <!--“我的”按钮-->
+    <ImageButton
+        android:id="@+id/mine_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        app:srcCompat="@mipmap/mine" />
+
+    <!--“分类”按钮-->
+    <ImageButton
+        android:id="@+id/classification_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#00000000"
+        app:srcCompat="@mipmap/fenlei" />
+
 </RelativeLayout>
-=======
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="476dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
