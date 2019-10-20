@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.liuguangqiang.ipicker:library:1.0.1@aar">
+    <CLASSES>
+<<<<<<< HEAD
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b88942a0ad5e4f3816ea2c1dc65adabb/jetified-library-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b88942a0ad5e4f3816ea2c1dc65adabb/jetified-library-1.0.1/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f762736c1dde43baca2d3ccada736ead/jetified-library-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f762736c1dde43baca2d3ccada736ead/jetified-library-1.0.1/res" />
+>>>>>>> bcdb34264c63f09bdc2b7a25351246291705de55
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liuguangqiang.ipicker/library/1.0.1/b1aa7fa8a11f09f346da5732804ef3ede38c06e9/library-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

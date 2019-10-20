@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -26,7 +25,7 @@ import java.util.ArrayList;
 import cn.gavinliu.android.lib.shapedimageview.ShapedImageView;
 
 
-public class sortpage extends AppCompatActivity {
+public class SortPage extends AppCompatActivity {
     private double rate  = 2.0/5;//组件占屏幕宽度的比例
     private double top=1.0/8;//组件距离屏幕两侧的边距占屏幕总宽度的比例
 
@@ -45,9 +44,9 @@ public class sortpage extends AppCompatActivity {
 //        buttonone.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent=new Intent(sortpage.this,MainActivity.class);
+//                Intent intent=new Intent(SortPage.this,MainActivity.class);
 //                startActivity(intent);
-//                sortpage.this.finish();
+//                SortPage.this.finish();
 //
 //            }
 //        });
@@ -109,14 +108,14 @@ public class sortpage extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {//设置点击每一个类的点击事件，跳转到分类页的下一个页面，分类列表页，并将点击的哪一个类传过去，在数据库中查找，动态创建新的列表页
-                Intent intent=new Intent(sortpage.this,SortPageNext.class);
+                Intent intent=new Intent(SortPage.this,SortPageNext.class);
                 Bundle bundle=new Bundle();
                 TextView textView=(TextView) (((RelativeLayout)v.getParent()).findViewById(R.id.kindText));
                 String classname=(String)textView.getText();
                 bundle.putCharSequence("classname",classname);
                 intent.putExtras(bundle);
                 startActivity(intent);
-                sortpage.this.finish();
+                SortPage.this.finish();
             }
         });
     }

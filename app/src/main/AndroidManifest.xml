@@ -13,6 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/AppTheme"
         tools:replace="icon">
         <activity
@@ -21,18 +22,74 @@
         <activity android:name=".HotWordActivity" />
         <activity android:name=".SortPageNext" />
         <activity android:name=".sortpage" />
+=======
+        android:theme="@style/AppTheme">
+<<<<<<< HEAD
+
+        <activity android:name=".SortPageNext"></activity>
+        <activity android:name=".sortpage"></activity>
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+        <activity android:name=".HotWordActivity">
+
+        </activity>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
+        <activity android:name=".SortPageNext"></activity>
+        <activity android:name=".SortPage"></activity>
+>>>>>>> bcdb34264c63f09bdc2b7a25351246291705de55
+
+>>>>>>> 285544f8a137e4aefb3c101451207d461c4a197f
         <activity
             android:name="com.liuguangqiang.ipicker.IPickerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/IPickerTheme" />
+<<<<<<< HEAD
         <activity android:name=".MineActivity" />
         <activity android:name=".MainActivity">
+=======
+
+<<<<<<< HEAD
+        <activity android:name=".MainActivity"></activity>
+
+        <activity android:name=".MineActivity">
+=======
+<<<<<<< HEAD
+        <activity android:name=".MainActivity"></activity>
+
+=======
+>>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
+        <activity android:name=".MainActivity">
+=======
+>>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
+        <activity android:name=".MineActivity" >
+
+
+>>>>>>> bcdb34264c63f09bdc2b7a25351246291705de55
+>>>>>>> 285544f8a137e4aefb3c101451207d461c4a197f
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
         </activity>
+<<<<<<< HEAD
+=======
+
+=======
+
+
+        </activity>
+
+>>>>>>> bcdb34264c63f09bdc2b7a25351246291705de55
+>>>>>>> 285544f8a137e4aefb3c101451207d461c4a197f
     </application>
 
 </manifest>

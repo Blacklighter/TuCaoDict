@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,7 +12,10 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import net.lemonsoft.lemonbubble.LemonBubble;
 
 import org.w3c.dom.Text;
 
@@ -35,6 +40,19 @@ public class MineActivity extends AppCompatActivity {
                 "消息通知", "联系客服"}; // 定义并初始化保存列表项文字的数组
 
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // 创建一个list集合
+        Account account = new Account();
+        LemonBubble.showRoundProgress(MineActivity.this,"账户名加载中....");
+        account.getAccountNum(new Handler(){
+
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+                String result = msg.obj;
+                View.setText(reuslt)；
+                LemonBubble.showRight(MineActivity.this,"加载完成",1500);
+
+            }
+        });
 
         TextView mineText = (TextView)listview.findViewById(R.id.module);
         // 通过for循环将图片id和列表项文字放到Map中，并添加到list集合中
