@@ -3,10 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -17,15 +14,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.nex3z.flowlayout.FlowLayout;
-=======
-<<<<<<< HEAD
->>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
 
-=======
-<<<<<<< HEAD
 
 import android.content.Intent;
-<<<<<<< HEAD
 
 import android.media.Image;
 
@@ -33,22 +24,12 @@ import android.app.Activity;
 
 import android.content.Intent;
 
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 41320e113ce267359428627e3ac5326c1a281517
+
 import android.media.Image;
 import android.app.Activity;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 import android.content.Intent;
-=======
->>>>>>> 17e59519b70518cc36dfcd8e2648445ce94b7fbf
->>>>>>> d6ac82212445fedb7cfbdd4e42083771932ae317
->>>>>>> 36715cc90a7da4882601e5b1ae91abf25485a500
->>>>>>> 41320e113ce267359428627e3ac5326c1a281517
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -70,15 +51,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 41320e113ce267359428627e3ac5326c1a281517
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -87,12 +60,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-<<<<<<< HEAD
 
-=======
->>>>>>> 36715cc90a7da4882601e5b1ae91abf25485a500
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
->>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
 
 public class MainActivity extends AppCompatActivity {
     Handler handler = null;
@@ -108,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
 
-=======
+
+
         //从布局文件中获取所有的View
         this.headLine = (TextView)findViewById(R.id.head_line);
         this.cameraButton = (ImageButton)findViewById(R.id.camera_button);
@@ -177,11 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void setFindEditText(EditText findEditText) {
         this.findEditText = findEditText;
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
 //        Intent intent=getIntent();
 //        Bundle bundle=intent.getExtras();
 //        String string=bundle.getString("text");
@@ -195,11 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-<<<<<<< HEAD
-=======
->>>>>>> 36715cc90a7da4882601e5b1ae91abf25485a500
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
->>>>>>> 89b0523e72ff4b89816a4ae731550f675710d4d8
+
     }
 
 }

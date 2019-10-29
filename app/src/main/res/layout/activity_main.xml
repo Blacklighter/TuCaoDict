@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -67,6 +67,7 @@
 
         </LinearLayout>
 
+
     <!--底部系统推荐热词-->
     <com.nex3z.flowlayout.FlowLayout
         android:id="@+id/relevant_content_part"
@@ -83,9 +84,7 @@
 
     </com.nex3z.flowlayout.FlowLayout>
 
-</RelativeLayout>
-=======
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -101,13 +100,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="476dp" />
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Button"-->
+<!--        tools:layout_editor_absoluteX="176dp"-->
+<!--        tools:layout_editor_absoluteY="476dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> 99319a7f94ea2edf8111058bb70d636023717c10
+
+    </RelativeLayout>
+

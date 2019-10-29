@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -114,6 +117,17 @@ public class SortPage extends AppCompatActivity {
                 String classname=(String)textView.getText();
                 bundle.putCharSequence("classname",classname);
                 intent.putExtras(bundle);
+                startActivity(intent);
+                SortPage.this.finish();
+            }
+        });
+
+
+        ImageView incraese=(ImageView)findViewById(R.id.increase);
+        incraese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {//设置点击每一个类的点击事件，跳转到分类页的下一个页面，分类列表页，并将点击的哪一个类传过去，在数据库中查找，动态创建新的列表页
+                Intent intent=new Intent(SortPage.this,IncreaseSort.class);
                 startActivity(intent);
                 SortPage.this.finish();
             }
