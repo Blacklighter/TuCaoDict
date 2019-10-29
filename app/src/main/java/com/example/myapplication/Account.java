@@ -62,7 +62,6 @@ public class Account extends AppCompatActivity {
 
 
     public void getAccountNum(final Handler handler) {
-        Utils.
         Utils.mysql("selectffasd ",new Handler(){
             @Override
             public void handleMessage(@NonNull Message msg) {
@@ -79,7 +78,6 @@ public class Account extends AppCompatActivity {
                 }
             }
         });
-        return accountNum;
     }
 
     public String getTelephone() {

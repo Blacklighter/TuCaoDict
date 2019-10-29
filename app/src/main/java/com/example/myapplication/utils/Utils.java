@@ -33,6 +33,28 @@ public class Utils extends BasicUtils{
         uploadFilesWithParams("headImg",new String[]{imgPath},params,handler,context,"头像上传中","上传成功");
     }
 
+    public static void addKind(final String imgPath, final String kindName, final Handler handler){
+        mysql("INSERT entry_kinds (kind_name) VALUES ('"+kindName+"')",new Handler(){
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+                setKindImg(imgPath,kindName,handler);
+            }
+        });
+    }
+
+    public static void addKind(final String imgPath, final String kindName, final Handler handler, final Context context){
+        LemonBubble.showRoundProgress(context,"类别添加中...");
+        addKind(imgPath,kindName,new Handler(){
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+                LemonBubble.showRight(context,"添加成功",1500);
+                handler.sendMessage(Message.obtain(msg));
+            }
+        });
+    }
+
     public static void setKindImg(String imgPath, String kindName, Handler handler){
         Map<String,String> params = new HashMap<>();
         params.put("kind_name",kindName);
