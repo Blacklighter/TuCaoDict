@@ -41,14 +41,15 @@ public class MineActivity extends AppCompatActivity {
 
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // 创建一个list集合
         Account account = new Account();
+        onCreate(new Bundle());
         LemonBubble.showRoundProgress(MineActivity.this,"账户名加载中....");
         account.getAccountNum(new Handler(){
 
             @Override
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);
-                String result = msg.obj;
-                View.setText(reuslt)；
+                String result = (String) msg.obj;
+
                 LemonBubble.showRight(MineActivity.this,"加载完成",1500);
 
             }
