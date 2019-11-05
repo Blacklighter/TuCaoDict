@@ -16,7 +16,7 @@ public class FindButtonOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         //调用页面相应的方法
-        this.mainActivity.clickFindButton();
+        this.mainActivity.find();
     }
 
 

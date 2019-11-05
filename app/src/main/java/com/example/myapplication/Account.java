@@ -63,8 +63,12 @@ public class Account extends AppCompatActivity {
 
     //从数据库中获取当前用户的用户账号
     public void getAccountNum(final Handler handler) {
+<<<<<<< HEAD
 
         Utils.mysql("selectffasd ",new Handler(){           //在数据库中对“字符串”进行查找，查询结果为msg的成员
+=======
+        Utils.mysql("selectffasd ",new Handler(){
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
             @Override
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);

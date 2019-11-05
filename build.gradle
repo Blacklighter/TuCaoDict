@@ -5,19 +5,30 @@ buildscript {
         google()
         jcenter()
 
+<<<<<<< HEAD
 
-
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
-
-
-
+=======
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
 
+
+
+<<<<<<< HEAD
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.1'
+
+=======
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
     }
 }
 
