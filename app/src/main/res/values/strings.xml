@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
+<<<<<<< HEAD
+    <string name="title_activity_login">Sign in</string>
+=======
 
 
     <string name="title_activity_login">Sign in</string>
 
+>>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
