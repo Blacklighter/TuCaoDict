@@ -45,15 +45,7 @@ public class MineActivity extends AppCompatActivity {
         LemonBubble.showRoundProgress(MineActivity.this,"账户名加载中....");
 
 
-            @Override
-            public void handleMessage(@NonNull Message msg) {
-                super.handleMessage(msg);
-                String result = (String) msg.obj;
 
-                LemonBubble.showRight(MineActivity.this,"加载完成",1500);
-
-            }
-        });
 
 
         TextView mineText = (TextView)listview.findViewById(R.id.module);
