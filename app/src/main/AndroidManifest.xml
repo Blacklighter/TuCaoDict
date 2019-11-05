@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication">
+    package="com.example.myapplication" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:name=".MyApplication"
@@ -17,71 +17,33 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
 
-
-        <activity android:name=".SortPageNext"></activity>
-
-        <activity android:name=".HotWordActivity">
-
+        <activity android:name=".TestActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <activity android:name=".SortPage"></activity>
+        <activity android:name=".SortPageNext" />
 
-=======
-        android:theme="@style/AppTheme"
-        tools:replace="icon">
+        <activity android:name=".HotWordActivity" ></activity>
+
+        <activity android:name=".SortPage" />
+
         <activity
             android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
-
-        <activity android:name=".SortPageNext"></activity>
-
-        <activity android:name=".HotWordActivity"></activity>
-
-        <activity android:name=".SortPage"></activity>
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
+            android:label="@string/title_activity_login" />
 
         <activity
             android:name="com.liuguangqiang.ipicker.IPickerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/IPickerTheme" />
 
-<<<<<<< HEAD
+        <activity android:name=".MineActivity" />
 
-        <activity android:name=".MainActivity"></activity>
-
-=======
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
-
-        <activity android:name=".MineActivity" ></activity>
-
-<<<<<<< HEAD
-        <activity android:name=".MineActivity">
-
-=======
-        <activity android:name=".MainActivity" >
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-<<<<<<< HEAD
-
-        </activity>
-
-
-
-
-
-
-
-=======
-        </activity>
-
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
+        <activity android:name=".MainActivity" ></activity>
     </application>
 
 </manifest>

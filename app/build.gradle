@@ -1,4 +1,18 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
+
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+    appKey "2cff990dce598"
+    appSecret "45adbadcf6bb64e49b347b2cd82ee8d4"
+
+    SMSSDK {
+        //默认使用GUI，若不使用GUI，通过以下开关关闭
+        //gui false
+        //若使用GUI的自动填充验证码功能，需打开此设置
+        //autoSMS true
+    }
+}
 
 android {
     compileSdkVersion 29
@@ -24,10 +38,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 
     implementation 'com.nex3z:flow-layout:1.3.0'
     implementation 'com.nightonke:boommenu:2.1.1'
@@ -37,11 +47,11 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
 
-<<<<<<< HEAD
+
     implementation 'cn.gavinliu:ShapedImageView:0.8.6'
     implementation 'com.nex3z:flow-layout:1.3.0'
 
-=======
+
     implementation 'cn.gavinliu:ShapedImageView:0.8.6'
     implementation 'com.nex3z:flow-layout:1.3.0'
     implementation 'com.liuguangqiang.ipicker:library:1.0.1'
@@ -52,16 +62,11 @@ dependencies {
     implementation 'com.nex3z:flow-layout:1.3.0'
 
 
-
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
     implementation 'com.liuguangqiang.ipicker:library:1.0.1'
     implementation 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
     implementation 'com.github.1em0nsOft:LemonBubble4Android:1.0.13'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
     implementation 'com.liuguangqiang.ipicker:library:1.0.1'
     implementation 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
     implementation 'com.github.1em0nsOft:LemonBubble4Android:1.0.13'
@@ -73,10 +78,7 @@ dependencies {
 
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
-<<<<<<< HEAD
 
-=======
->>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
