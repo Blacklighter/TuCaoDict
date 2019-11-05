@@ -6,13 +6,35 @@ buildscript {
         jcenter()
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+<<<<<<< HEAD
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'com.mob.sdk:MobSDK:+'
+=======
+
+
+
+
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.1'
+
 
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'com.mob.sdk:MobSDK:+'
+>>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
 
     }
 }
