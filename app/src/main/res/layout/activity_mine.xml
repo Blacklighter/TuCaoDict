@@ -5,19 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@drawable/two"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@mipmap/person02"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="50dp" />
 
     <ListView
+        android:layout_marginTop="25dp"
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp">
     </ListView>
 
 </LinearLayout>

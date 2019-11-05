@@ -1,6 +1,11 @@
 package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 import android.content.Intent;
 
 
@@ -13,6 +18,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import com.nex3z.flowlayout.FlowLayout;
+<<<<<<< HEAD
+
+
+import android.content.Intent;
+
+=======
 import android.content.Intent;
 import android.media.Image;
 import android.app.Activity;
@@ -20,6 +31,7 @@ import android.content.Intent;
 
 
 import android.content.Intent;
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 
 import android.media.Image;
 
@@ -27,6 +39,10 @@ import android.app.Activity;
 
 import android.content.Intent;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 import android.media.Image;
 import android.app.Activity;
 
@@ -48,6 +64,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -71,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
         //从布局文件中获取所有的View
         this.headLine = (TextView)findViewById(R.id.head_line);
         this.cameraButton = (ImageButton)findViewById(R.id.camera_button);
@@ -205,9 +228,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void setFindEditText(EditText findEditText) {
         this.findEditText = findEditText;
+<<<<<<< HEAD
+
+//        Intent intent=getIntent();
+//        Bundle bundle=intent.getExtras();
+//        String string=bundle.getString("text");
+//        Log.e("text",string);//获取点击了哪一个分类列表的词条名。
+
+        Button btn = (Button)findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+    }
+=======
     }
 
 
 
+>>>>>>> 1e535d6d0eb4ffe5e6701d68776938a7b6c204a7
 
 }
