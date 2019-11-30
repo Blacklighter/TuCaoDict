@@ -41,8 +41,15 @@ public class MineActivity extends AppCompatActivity {
 
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // 创建一个list集合
         Account account = new Account();
+        onCreate(new Bundle());
         LemonBubble.showRoundProgress(MineActivity.this,"账户名加载中....");
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
 
         TextView mineText = (TextView)listview.findViewById(R.id.module);
         // 通过for循环将图片id和列表项文字放到Map中，并添加到list集合中
