@@ -25,6 +25,15 @@
             app:srcCompat="@mipmap/return_now" />
 
         <ImageButton
+            android:id="@+id/collect_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="55dp"
+            android:background="#00000000"
+            app:srcCompat="@mipmap/shouc" />
+
+        <ImageButton
             android:id="@+id/writing_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -37,22 +46,22 @@
     </RelativeLayout>
 
     <!--总标题-->
+
+    <!--标题下部的关联分类-->
     <TextView
         android:id="@+id/head_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/text_line"
         android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
         android:gravity="left"
         android:padding="0dp"
         android:text="海南大学"
         android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:textStyle="bold" />
 
-    <!--标题下部的关联分类-->
     <com.nex3z.flowlayout.FlowLayout
         android:id="@+id/correlation_with_this"
         android:layout_alignParentBottom="true"

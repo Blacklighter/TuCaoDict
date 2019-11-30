@@ -38,7 +38,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.utils.Utils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 public class Account extends AppCompatActivity {
     private String accountNum;          //用户账号
@@ -55,8 +61,23 @@ public class Account extends AppCompatActivity {
 
 
 
-    public String getAccountNum() {
-        return accountNum;
+    public void getAccountNum(final Handler handler) {
+        Utils.mysql("selectffasd ",new Handler(){
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+                JSONArray results = (JSONArray) msg.obj;
+                try {
+                    String result = (String)results.get(0);
+
+                    Message msg2 = new Message();
+                    msg2.obj = result;
+                    handler.sendMessage(msg2);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     public String getTelephone() {
