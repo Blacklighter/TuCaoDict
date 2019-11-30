@@ -15,7 +15,7 @@ public class GoodButtonOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         //调用页面相应的方法
-        this.hotWordActivity.clickGoodButton(this.goodButton);
+        this.hotWordActivity.clickGoodButton(this.goodButton,v);
     }
 
 
