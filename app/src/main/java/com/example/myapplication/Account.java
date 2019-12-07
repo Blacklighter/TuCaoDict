@@ -28,7 +28,7 @@ public class Account extends AppCompatActivity {
     private String collection;          //收藏
 
 
-<<<<<<< HEAD
+
     //从数据库中获取当前用户的用户账号
     public void getAccountNum(final Handler handler) {
         Utils.mysql("selectffasd ",new Handler(){           //在数据库中对“字符串”进行查找，查询结果为msg的成员
@@ -48,7 +48,7 @@ public class Account extends AppCompatActivity {
             }
         });
     }
-=======
+
 //    //从数据库中获取当前用户的用户账号
 //    public String getAccountNum(final Handler handler) {
 //
@@ -73,7 +73,7 @@ public class Account extends AppCompatActivity {
 //            }
 //        });
 //    }
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
+
 
     //从数据库中获取当前用户的Telephone
     public void getTelephone(final Handler handler) {
