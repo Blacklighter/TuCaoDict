@@ -27,7 +27,7 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_sort_page_next);
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
-        String classname=bundle.getString("classname");
+        String classname=bundle.getString("classname");//是什么分类
         addList(getText(classname));
         Button backbutton=(Button)findViewById(R.id.backbutton);
         backbutton.setOnClickListener(new View.OnClickListener() {

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -100,6 +104,15 @@
 
 
 
+
+    <ImageButton
+        android:id="@+id/mine_button"
+
+=======
+<<<<<<< HEAD
+
+
+
     <!--“我的”按钮-->
 
 =======
@@ -112,6 +125,7 @@
 >>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
     <ImageButton
         android:id="@+id/mine_button"
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -121,7 +135,7 @@
         android:background="#00000000"
         app:srcCompat="@mipmap/mine" />
 
-<<<<<<< HEAD
+
 <!--    <Button-->
 <!--        android:id="@+id/button"-->
 <!--        android:layout_width="wrap_content"-->
@@ -131,6 +145,12 @@
 <!--        tools:layout_editor_absoluteY="476dp" />-->
 
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
     <!--“分类”按钮-->
 =======
     <!--“发布”按钮-->
@@ -148,9 +168,12 @@
 
 <<<<<<< HEAD
 </RelativeLayout>
+<<<<<<< HEAD
+=======
 =======
 <<<<<<< HEAD
 >>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 
 
 
@@ -179,6 +202,12 @@
 <!--        tools:layout_editor_absoluteY="476dp" />-->
 
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<<<<<<< HEAD
+
+
+
+
+=======
 <<<<<<< HEAD
 
 =======
@@ -216,3 +245,4 @@
 
 >>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 >>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9

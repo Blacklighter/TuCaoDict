@@ -36,6 +36,10 @@ public class SortPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //if(((MyApplication)getApplication()).getAccount().identity.equal("普通用户"))
+           // findViewById(R.id.increase).setVisibility(View.GONE);
+
         setContentView(R.layout.activity_sortpage);
         ArrayList<String> names=getKinds();//用来记录从数据库得到的分类名
         ArrayList<String> img =getImgs();//用来记录从数据库得到的分类对应图片的地址
@@ -44,15 +48,7 @@ public class SortPage extends AppCompatActivity {
         }
 
 
-//        buttonone.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(SortPage.this,MainActivity.class);
-//                startActivity(intent);
-//                SortPage.this.finish();
-//
-//            }
-//        });
+
     }
 
     private ArrayList<String> getKinds(){

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.liuguangqiang.ipicker:library:1.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b88942a0ad5e4f3816ea2c1dc65adabb/jetified-library-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b88942a0ad5e4f3816ea2c1dc65adabb/jetified-library-1.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a0785c36e237f9b586c062c69cfced63/jetified-library-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a0785c36e237f9b586c062c69cfced63/jetified-library-1.0.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
