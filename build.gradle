@@ -1,4 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
     repositories {
@@ -6,17 +5,25 @@ buildscript {
         jcenter()
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.2'
+<<<<<<< HEAD
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'com.mob.sdk:MobSDK:+'
+
+=======
+        classpath 'com.mob.sdk:MobSDK:+'
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 
 
 
@@ -27,12 +34,19 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
 
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.1'
+
 
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.2'
+<<<<<<< HEAD
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+=======
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 
     }
 }

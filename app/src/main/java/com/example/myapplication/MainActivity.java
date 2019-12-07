@@ -2,9 +2,11 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 import android.content.Intent;
-
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,20 +17,21 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import com.nex3z.flowlayout.FlowLayout;
+<<<<<<< HEAD
 
 
 
 import android.content.Intent;
 
 
+=======
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 import android.content.Intent;
 import android.media.Image;
 import android.app.Activity;
 import android.content.Intent;
 
-
 import android.content.Intent;
-
 
 import android.media.Image;
 
@@ -36,12 +39,10 @@ import android.app.Activity;
 
 import android.content.Intent;
 
-
 import android.media.Image;
 import android.app.Activity;
 
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -54,11 +55,11 @@ import com.liuguangqiang.ipicker.IPicker;
 import net.lemonsoft.lemonbubble.LemonBubble;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -68,12 +69,10 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-
 public class MainActivity extends AppCompatActivity {
-    Handler handler = null;
-
     private TextView headLine;//标题
-    private ImageButton cameraButton,mineButton,classificationButton,findButton;//相机、我的、分类、搜索
+    //相机、我的、分类、搜索、新建
+    private ImageButton cameraButton,mineButton,classificationButton,findButton,creteOneButon;
     private EditText findEditText;//输入框
     private com.nex3z.flowlayout.FlowLayout relevantContent;//热点词条
 
@@ -81,14 +80,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         //从布局文件中获取所有的View
         this.headLine = (TextView)findViewById(R.id.head_line);
         this.cameraButton = (ImageButton)findViewById(R.id.camera_button);
         this.findButton = (ImageButton)findViewById(R.id.find_button);
         this.mineButton = (ImageButton)findViewById(R.id.mine_button);
         this.classificationButton = (ImageButton)findViewById(R.id.classification_button);
+        this.creteOneButon = (ImageButton)findViewById(R.id.crete_one_button);
         this.findEditText = (EditText)findViewById(R.id.find_edit);
         this.relevantContent = (com.nex3z.flowlayout.FlowLayout)findViewById(
                 R.id.relevant_content_part);
@@ -102,7 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 new ClassificationButtonOnClickListener(this.getClassificationButton(),this));
         this.getMineButton().setOnClickListener(
                 new MineButtonOnClickListener(this.getMineButton(),this));
+        this.getCreteOneButon().setOnClickListener(
+                new CreteOneButtonOnClickListener(this.getCameraButton(),this));
 
+        this.initAllTextView();//从数据库中获得需要加入到流式布局中的标签，并将其加入
     }//onCreate
 
     //点击了“相机”按钮
@@ -133,6 +134,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);//启动
     }
 
+    //点击了“新建”按钮
+    public void clickCreteOneButton(){
+        /*Intent intent = new Intent(this,WriteNewOne.class);//声明一个意图
+        startActivity(intent);//启动*/
+    }
+
     //点击了热门槽点标签
     public void clickTextView(String string){
         if(string.length() != 0){
@@ -158,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView textView = new TextView(this);
         textView.setText(string);
         MyStyleTextView myStyleTextView = new MyStyleTextView(textView,this);
-        this.getRelevantContent().addView(textView);
         //设置监听器
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +172,42 @@ public class MainActivity extends AppCompatActivity {
                 clickTextView(textView.getText().toString());
             }
         });
+        this.getRelevantContent().addView(textView);//加入到流式视图中
+    }
+
+    //初始化所有的热门槽点标签
+    public void initAllTextView(){
+
+        //提示框
+        Utils.mysql("SELECT entry_name FROM entry_overview where state = '待审核' order by hot_num desc",
+                new Handler(){
+                    //Message传回，触发该回调函数
+                    @Override
+                    public void handleMessage(@NonNull Message msg) {
+                        super.handleMessage(msg);
+                        JSONArray results =(JSONArray)msg.obj;
+
+                        //如果存在词条
+                        if(results.length() > 0){
+                            //循环加入标签
+                            for(int i = 0;i < results.length();i++){
+
+                                JSONObject jsonObject = null;
+                                try {
+                                    jsonObject = results.getJSONObject(i);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                try {
+                                    createTextView(jsonObject.getString("entry_name"));//调用方法
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        else{}
+                    }
+                },MainActivity.this,"加载中","OK");
     }
 
 
@@ -198,6 +240,10 @@ public class MainActivity extends AppCompatActivity {
         return mineButton;
     }
 
+    public ImageButton getCreteOneButon() {
+        return creteOneButon;
+    }
+
     public void setCameraButton(ImageButton cameraButton) {
         this.cameraButton = cameraButton;
     }
@@ -216,26 +262,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void setFindEditText(EditText findEditText) {
         this.findEditText = findEditText;
+    }
 
+    public void setClassificationButton(ImageButton classificationButton) {
+        this.classificationButton = classificationButton;
+    }
 
-//        Intent intent=getIntent();
-//        Bundle bundle=intent.getExtras();
-//        String string=bundle.getString("text");
-//        Log.e("text",string);//获取点击了哪一个分类列表的词条名。
-
-        Button btn = (Button)findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
+<<<<<<< HEAD
 
     }
 
-
+=======
+    public void setMineButton(ImageButton mineButton) {
+        this.mineButton = mineButton;
     }
 
+    public void setCreteOneButon(ImageButton creteOneButon) {
+        this.creteOneButon = creteOneButon;
+    }
+
+}
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 
 

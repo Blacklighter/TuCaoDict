@@ -34,6 +34,7 @@ public class Account extends AppCompatActivity {
         this.password = password;
     }
 
+<<<<<<< HEAD:app/src/main/java/com/example/myapplication/Login/Account.java
     public Account() {
         super();
     }
@@ -64,6 +65,27 @@ public class Account extends AppCompatActivity {
 //        });
 //    });
 
+=======
+    //从数据库中获取当前用户的用户账号
+    public void getAccountNum(final Handler handler) {
+        Utils.mysql("selectffasd ",new Handler(){           //在数据库中对“字符串”进行查找，查询结果为msg的成员
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+                JSONArray results = (JSONArray) msg.obj;
+                try {
+                    String result = (String)results.get(0);
+
+                    Message msg2 = new Message();
+                    msg2.obj = result;
+                    handler.sendMessage(msg2);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1:app/src/main/java/com/example/myapplication/Account.java
 
     //从数据库中获取当前用户的Telephone
     public void getTelephone(final Handler handler) {

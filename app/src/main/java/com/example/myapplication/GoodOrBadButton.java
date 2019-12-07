@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 import android.widget.ImageButton;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GoodOrBadButton {
@@ -23,6 +24,7 @@ public class GoodOrBadButton {
         this.setImageButton(imageButton);
         this.setNumberText(numberText);
         this.setHotWordActivity(hotWordActivity);
+        this.getImageButton().setScaleType(ImageView.ScaleType.FIT_CENTER);
     }
 
     public GoodOrBadButton(int number,ImageButton imageButton,TextView numberText,
@@ -32,6 +34,17 @@ public class GoodOrBadButton {
         this.setImageButton(imageButton);
         this.setNumberText(numberText);
         this.setHotWordActivity(hotWordActivity);
+    }
+
+    //更新number并更改textView的值
+    public void upDate(int number){
+        this.setNumber(number);
+        if (this.getNumber() > 100)
+            this.getNumberText().setText("99+");
+        else if(this.getNumber() == 0)
+            this.getNumberText().setText("");
+        else
+            this.getNumberText().setText("" + this.getNumber());
     }
 
 
@@ -53,7 +66,7 @@ public class GoodOrBadButton {
     }
 
     public void setIsClick(boolean isClick) {
-        isClick = isClick;
+        this.isClick = isClick;
     }
 
     public boolean isClick() {
