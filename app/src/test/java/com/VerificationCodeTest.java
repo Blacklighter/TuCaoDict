@@ -1,8 +1,7 @@
-package com.example.myapplication;
+package com;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,30 +10,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.myapplication.R;
 import com.mob.MobSDK;
 
 import net.lemonsoft.lemonbubble.LemonBubble;
 
-import java.util.HashMap;
-
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
-import cn.smssdk.gui.RegisterPage;
 
-public class TestActivity extends AppCompatActivity {
+public class VerificationCodeTest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_login);
 
         MobSDK.init(this);
 
         // 注册一个事件回调，用于处理SMSSDK接口请求的结果
         SMSSDK.registerEventHandler(eventHandler);
 
-        final EditText telephone = (EditText)findViewById(R.id.telephone);
-        Button button = (Button)findViewById(R.id.testButton);
+        final EditText telephone = (EditText)findViewById(R.id.username);
+        Button button = (Button)findViewById(R.id.passwordButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,8 +41,8 @@ public class TestActivity extends AppCompatActivity {
         });
 
 
-        final EditText code = (EditText)findViewById(R.id.code);
-        Button button2 = (Button)findViewById(R.id.testButton2);
+        final EditText code = (EditText)findViewById(R.id.password);
+        Button button2 = (Button)findViewById(R.id.loginButton);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +72,7 @@ public class TestActivity extends AppCompatActivity {
                         if (result == SMSSDK.RESULT_COMPLETE) {
                             // TODO 处理成功得到验证码的结果
                             // 请注意，此时只是完成了发送验证码的请求，验证码短信还需要几秒钟之后才送达
-                            LemonBubble.showRight(TestActivity.this,"发送成功",1500);
+                            LemonBubble.showRight(VerificationCodeTest.this,"发送成功",1500);
                         } else {
                             // TODO 处理错误的结果
                             ((Throwable) data).printStackTrace();
@@ -83,11 +80,11 @@ public class TestActivity extends AppCompatActivity {
                     } else if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
                         if (result == SMSSDK.RESULT_COMPLETE) {
                             // TODO 处理验证码验证通过的结果
-                            LemonBubble.showRight(TestActivity.this,"验证正确",1500);
+                            LemonBubble.showRight(VerificationCodeTest.this,"验证正确",1500);
                         } else {
                             // TODO 处理错误的结果
                             ((Throwable) data).printStackTrace();
-                            LemonBubble.showError(TestActivity.this,"验证错误",1500);
+                            LemonBubble.showError(VerificationCodeTest.this,"验证错误",1500);
                         }
                     }
                     // TODO 其他接口的返回结果也类似，根据event判断当前数据属于哪个接口

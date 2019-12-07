@@ -2,10 +2,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
 import android.content.Intent;
 
 
@@ -18,10 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import com.nex3z.flowlayout.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
 
 
 import android.content.Intent;
@@ -239,12 +233,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-<<<<<<< HEAD
-=======
+
 
     }
 
-
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
 
 

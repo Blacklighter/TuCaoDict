@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Login;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +17,7 @@ import org.json.JSONException;
 public class Account extends AppCompatActivity {
     private String accountNum;          //用户账号
     private String telephone;           //电话号码
+    private String password;            //用户密码
     private String nickName;            //昵称
     private Image headImage;            //头像
     private String identity;            //身份(普通用户，管理员)
@@ -27,28 +28,17 @@ public class Account extends AppCompatActivity {
     private String browsingHistoy;      //浏览记录
     private String collection;          //收藏
 
-
-<<<<<<< HEAD
-    //从数据库中获取当前用户的用户账号
-    public void getAccountNum(final Handler handler) {
-        Utils.mysql("selectffasd ",new Handler(){           //在数据库中对“字符串”进行查找，查询结果为msg的成员
-            @Override
-            public void handleMessage(@NonNull Message msg) {
-                super.handleMessage(msg);
-                JSONArray results = (JSONArray) msg.obj;
-                try {
-                    String result = (String)results.get(0);
-
-                    Message msg2 = new Message();
-                    msg2.obj = result;
-                    handler.sendMessage(msg2);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+    public Account(String telephone, String password) {
+        super();
+        this.telephone = telephone;
+        this.password = password;
     }
-=======
+
+    public Account() {
+        super();
+    }
+
+
 //    //从数据库中获取当前用户的用户账号
 //    public String getAccountNum(final Handler handler) {
 //
@@ -72,8 +62,8 @@ public class Account extends AppCompatActivity {
 //                }
 //            }
 //        });
-//    }
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
+//    });
+
 
     //从数据库中获取当前用户的Telephone
     public void getTelephone(final Handler handler) {
@@ -97,6 +87,12 @@ public class Account extends AppCompatActivity {
     public String getNickName() {
         return nickName;
     }
+
+    public String getTelephone() { return telephone;}
+
+    public String getPassword() { return  password; }
+
+    public void setPassword(String password) { this.password = password; }
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
@@ -126,5 +122,8 @@ public class Account extends AppCompatActivity {
         this.identity = identity;
     }
 
+    public void addAccount(Account account){
+
+    }
     }
 

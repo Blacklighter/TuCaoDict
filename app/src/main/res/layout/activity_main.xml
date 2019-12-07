@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-=======
-
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -87,7 +83,7 @@
     </com.nex3z.flowlayout.FlowLayout>
 
 
-<<<<<<< HEAD
+
     <ImageButton
         android:id="@+id/mine_button"
         android:layout_width="wrap_content"
@@ -111,10 +107,7 @@
         android:background="#00000000"
         app:srcCompat="@mipmap/fenlei" />
 
-</RelativeLayout>
-=======
 
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
 
 
 <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
@@ -142,8 +135,7 @@
 <!--        tools:layout_editor_absoluteY="476dp" />-->
 
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
-<<<<<<< HEAD
-=======
+
 
     <!--“我的”按钮-->
     <ImageButton
@@ -156,13 +148,13 @@
         android:layout_marginTop="10dp"
         android:background="#00000000"
         app:srcCompat="@mipmap/mine" />
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
+
 
     <!--“我的”按钮-->
 
-<<<<<<< HEAD
-=======
+
+
 </RelativeLayout>
 
->>>>>>> e5ab191e9798d1b2bffccdf6e750b8130373272a
+
 
