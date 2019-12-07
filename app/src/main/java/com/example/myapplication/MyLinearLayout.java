@@ -7,14 +7,21 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.ViewPager;
 
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 public class MyLinearLayout {
 
     private TextView headLine;
     private GoodOrBadButton goodButton,badButton;
-    //private TextViewAdapater adapater;
     private LinearLayout linearLayout;
     private ViewPager viewPager;
     private HotWordActivity hotWordActivity;
+    private TextViewAdapater textViews;
+    private String telNum = "";//当前翻页视图所对应的的作者电话
+    private JSONObject jsonObject;//当前页面的jsonObject
+    private ArrayList<JSONObject> jsonObjects;//获得的内容
 
     public MyLinearLayout(HotWordActivity hotWordActivity){
         this.setHotWordActivity(hotWordActivity);
@@ -43,6 +50,8 @@ public class MyLinearLayout {
                 new GoodButtonOnClickListener(hotWordActivity,this.goodButton));
         this.badButton.getImageButton().setOnClickListener(
                 new BadButtonOnClickListener(hotWordActivity,this.badButton));
+        this.textViews = new TextViewAdapater(hotWordActivity);
+        this.setJsonObjects(new ArrayList<JSONObject>());
     }
 
 
@@ -58,10 +67,6 @@ public class MyLinearLayout {
     public void setBadButton(GoodOrBadButton badButton) {
         this.badButton = badButton;
     }
-
-    /*public void setAdapater(TextViewAdapater adapater) {
-        this.adapater = adapater;
-    }*/
 
     public void setHotWordActivity(HotWordActivity hotWordActivity) {
         this.hotWordActivity = hotWordActivity;
@@ -83,6 +88,22 @@ public class MyLinearLayout {
         this.linearLayout = linearLayout;
     }
 
+    public void setTextViews(TextViewAdapater textViews) {
+        this.textViews = textViews;
+    }
+
+    public void setTelNum(String telNum) {
+        this.telNum = telNum;
+    }
+
+    public void setJsonObject(JSONObject jsonObject) {
+        this.jsonObject = jsonObject;
+    }
+
+    public void setJsonObjects(ArrayList<JSONObject> jsonObjects) {
+        this.jsonObjects = jsonObjects;
+    }
+
     public TextView getHeadLine() {
         return headLine;
     }
@@ -95,10 +116,6 @@ public class MyLinearLayout {
         return badButton;
     }
 
-    /*public TextViewAdapater getAdapater() {
-        return adapater;
-    }*/
-
     public LinearLayout getLinearLayout() {
         return linearLayout;
     }
@@ -109,6 +126,22 @@ public class MyLinearLayout {
 
     public HotWordActivity getHotWordActivity() {
         return hotWordActivity;
+    }
+
+    public TextViewAdapater getTextViews() {
+        return textViews;
+    }
+
+    public String getTelNum() {
+        return telNum;
+    }
+
+    public JSONObject getJsonObject() {
+        return jsonObject;
+    }
+
+    public ArrayList<JSONObject> getJsonObjects() {
+        return jsonObjects;
     }
 
 }

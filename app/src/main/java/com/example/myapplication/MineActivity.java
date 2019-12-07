@@ -1,9 +1,6 @@
 package com.example.myapplication;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,12 +9,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import net.lemonsoft.lemonbubble.LemonBubble;
+import com.example.myapplication.Login.Account;
 
-import org.w3c.dom.Text;
+import net.lemonsoft.lemonbubble.LemonBubble;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +40,13 @@ public class MineActivity extends AppCompatActivity {
         onCreate(new Bundle());
         LemonBubble.showRoundProgress(MineActivity.this,"账户名加载中....");
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
+>>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
 
         TextView mineText = (TextView)listview.findViewById(R.id.module);
         // 通过for循环将图片id和列表项文字放到Map中，并添加到list集合中

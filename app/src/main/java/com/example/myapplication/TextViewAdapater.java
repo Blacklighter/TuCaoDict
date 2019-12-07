@@ -16,11 +16,17 @@ public class TextViewAdapater extends PagerAdapter {
 
     //声明一个文本视图队列
     private ArrayList<TextView> mTextViewList = new ArrayList<TextView>();
+    private ArrayList<String> telNums = new ArrayList<String>();
+
+    public TextViewAdapater(Context context){
+        this.setmContext(context);
+    }
 
     //构造函数
-    public TextViewAdapater(Context context,ArrayList<TextView> textViews){
+    public TextViewAdapater(Context context,ArrayList<TextView> textViews,ArrayList<String> telNums){
         mContext = context;
         mTextViewList = textViews;
+        this.telNums = telNums;
     }
 
     //获取页面项的个数
@@ -44,4 +50,27 @@ public class TextViewAdapater extends PagerAdapter {
         return mTextViewList.get(position);
     }
 
+    public ArrayList<String> getTelNums() {
+        return telNums;
+    }
+
+    public ArrayList<TextView> getmTextViewList() {
+        return mTextViewList;
+    }
+
+    public Context getmContext() {
+        return mContext;
+    }
+
+    public void setmContext(Context mContext) {
+        this.mContext = mContext;
+    }
+
+    public void setmTextViewList(ArrayList<TextView> mTextViewList) {
+        this.mTextViewList = mTextViewList;
+    }
+
+    public void setTelNums(ArrayList<String> telNum) {
+        this.telNums = telNum;
+    }
 }
