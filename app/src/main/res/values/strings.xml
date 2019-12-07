@@ -1,19 +1,29 @@
 <resources>
     <string name="app_name">My Application</string>
-<<<<<<< HEAD
+    <
+    <
+    <
+    <
+    <
+    <
+    < HEAD
     <string name="title_activity_login">Sign in</string>
-=======
-<<<<<<< HEAD
+    =======
+    <
+    <
+    <
+    <
+    <
+    <
+    < HEAD
 
     <string name="title_activity_login">Sign in</string>
 
 
-
-
-=======
+    =======
     <string name="title_activity_login">Sign in</string>
->>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
+    >>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
+    >>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
