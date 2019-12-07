@@ -1,16 +1,6 @@
 package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-<<<<<<< HEAD
-=======
-
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 import android.content.Intent;
 
 import android.graphics.drawable.Drawable;
@@ -22,55 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import com.nex3z.flowlayout.FlowLayout;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
-
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
-
-import android.content.Intent;
-
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
-import android.content.Intent;
-import android.media.Image;
-import android.app.Activity;
-import android.content.Intent;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
-
-=======
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
-
-import android.content.Intent;
-
-import android.media.Image;
-
-import android.app.Activity;
-
-import android.content.Intent;
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 import android.media.Image;
 import android.app.Activity;
 
@@ -92,15 +34,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-<<<<<<< HEAD
 
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -112,12 +46,8 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     private TextView headLine;//标题
-<<<<<<< HEAD
-    private ImageButton cameraButton, mineButton, classificationButton, findButton;//相机、我的、分类、搜索
-=======
     //相机、我的、分类、搜索、新建
     private ImageButton cameraButton,mineButton,classificationButton,findButton,creteOneButon;
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
     private EditText findEditText;//输入框
     private com.nex3z.flowlayout.FlowLayout relevantContent;//热点词条
 
@@ -125,18 +55,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
 
 
-        //从布局文件中获取所有的View
-        this.headLine = (TextView) findViewById(R.id.head_line);
-        this.cameraButton = (ImageButton) findViewById(R.id.camera_button);
-        this.findButton = (ImageButton) findViewById(R.id.find_button);
-        this.mineButton = (ImageButton) findViewById(R.id.mine_button);
-        this.classificationButton = (ImageButton) findViewById(R.id.classification_button);
-        this.findEditText = (EditText) findViewById(R.id.find_edit);
-        this.relevantContent = (com.nex3z.flowlayout.FlowLayout) findViewById(
-=======
         //从布局文件中获取所有的View
         this.headLine = (TextView)findViewById(R.id.head_line);
         this.cameraButton = (ImageButton)findViewById(R.id.camera_button);
@@ -145,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
         this.classificationButton = (ImageButton)findViewById(R.id.classification_button);
         this.creteOneButon = (ImageButton)findViewById(R.id.crete_one_button);
         this.findEditText = (EditText)findViewById(R.id.find_edit);
-        this.relevantContent = (com.nex3z.flowlayout.FlowLayout)findViewById(
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
-                R.id.relevant_content_part);
+        this.relevantContent = (com.nex3z.flowlayout.FlowLayout)findViewById(R.id.relevant_content_part);
 
         //设置相机、搜索、我的、分类点击事件监听器
         this.cameraButton.setOnClickListener(
@@ -157,14 +75,9 @@ public class MainActivity extends AppCompatActivity {
         this.getClassificationButton().setOnClickListener(
                 new ClassificationButtonOnClickListener(this.getClassificationButton(), this));
         this.getMineButton().setOnClickListener(
-<<<<<<< HEAD
                 new MineButtonOnClickListener(this.getMineButton(), this));
-=======
-                new MineButtonOnClickListener(this.getMineButton(),this));
         this.getCreteOneButon().setOnClickListener(
                 new CreteOneButtonOnClickListener(this.getCameraButton(),this));
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
-
         this.initAllTextView();//从数据库中获得需要加入到流式布局中的标签，并将其加入
     }//onCreate
 
@@ -224,12 +137,9 @@ public class MainActivity extends AppCompatActivity {
     public void createTextView(String string) {
         final TextView textView = new TextView(this);
         textView.setText(string);
-<<<<<<< HEAD
         MyStyleTextView myStyleTextView = new MyStyleTextView(textView, this);
         this.getRelevantContent().addView(textView);
-=======
-        MyStyleTextView myStyleTextView = new MyStyleTextView(textView,this);
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
+
         //设置监听器
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -327,56 +237,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void setFindEditText(EditText findEditText) {
         this.findEditText = findEditText;
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 //        Intent intent=getIntent();
 //        Bundle bundle=intent.getExtras();
 //        String string=bundle.getString("text");
 //        Log.e("text",string);//获取点击了哪一个分类列表的词条名。
 
-        Button btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-=======
     }
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
 
     public void setClassificationButton(ImageButton classificationButton) {
         this.classificationButton = classificationButton;
     }
 
-<<<<<<< HEAD
 
-    }
-<<<<<<< HEAD
-}
 
-=======
-
-<<<<<<< HEAD
-    }
-
-=======
-=======
     public void setMineButton(ImageButton mineButton) {
         this.mineButton = mineButton;
     }
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 
     public void setCreteOneButon(ImageButton creteOneButon) {
         this.creteOneButon = creteOneButon;
     }
-
-<<<<<<< HEAD
-=======
 }
->>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
->>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 
 
->>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
