@@ -7,28 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TestActivity">
-    <EditText
-        android:id="@+id/telephone"
-        android:hint="手机号"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></EditText>
-    <Button
-        android:layout_gravity="center"
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试"></Button>
-    <EditText
-        android:id="@+id/code"
-        android:hint="验证码"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></EditText>
-    <Button
-        android:layout_gravity="center"
-        android:id="@+id/testButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试"></Button>
+<ListView
+    android:id="@+id/list"
+    android:divider="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:listitem="@layout/card"
+    ></ListView>
 </LinearLayout>

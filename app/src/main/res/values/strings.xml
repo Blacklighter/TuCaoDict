@@ -1,10 +1,27 @@
 <resources>
     <string name="app_name">My Application</string>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <string name="title_activity_login">Sign in</string>
+=======
+<<<<<<< HEAD
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
 
 
+<<<<<<< HEAD
     <string name="title_activity_login">Sign in</string>
 
 
+=======
+
+
+
+=======
+    <string name="title_activity_login">Sign in</string>
+>>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
+>>>>>>> a8ac36ee20dd1b2572d5417117fdfa2a355e1ecd
+>>>>>>> 78cbeff0e3e6caaf5a3f3eb06ac97f2081b89fa9
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -13,4 +30,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string-array name="sports">
+        <item>蔡徐坤</item>
+        <item>鸡你太美</item>
+        <item>打篮球</item>
+    </string-array>
 </resources>
