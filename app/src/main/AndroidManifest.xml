@@ -17,60 +17,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
-        android:theme="@style/AppTheme" >
-
-
-        <activity android:name=".IncreaseSort" > </activity>
-
-        <activity android:name=".SortPageNext" ></activity>
-
-        <activity android:name=".TestActivity" >
-=======
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".Review">
+        </activity>
         <activity android:name=".IncreaseSort"></activity>
         <activity android:name=".SortPageNext" />
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".HotWordActivity"></activity>
-        <activity android:name=".SortPage" />
-        <activity android:name=".MineActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".HotWordActivity" />
+        <activity android:name=".MineActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".SortPage"></activity>
         <activity
             android:name="com.liuguangqiang.ipicker.IPickerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/IPickerTheme"></activity>
-        <activity android:name=".Login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
->>>>>>> 6ad3048e1a187afdba56f3af1c61c756faca480d
-
-        </activity>
-<<<<<<< HEAD
-
-        <activity android:name=".HotWordActivity" >
-        </activity>
-
-        <activity android:name=".SortPage" >
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-
-        <activity android:name=".MineActivity"></activity>
-
-        <activity android:name=".MainActivity" ></activity>
-
-        <activity
-            android:name="com.liuguangqiang.ipicker.IPickerActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/IPickerTheme" >
-        </activity>
-
-=======
->>>>>>> 6ad3048e1a187afdba56f3af1c61c756faca480d
     </application>
 
 </manifest>
