@@ -76,6 +76,7 @@ public class SortPage extends AppCompatActivity {
                 JSONObject row = rows.getJSONObject(i);
                 String kind_img = null;
                 kind_img = row.getString("kind_img");
+                Log.e("name:",""+kind_img);
                 arrayList.add(kind_img);
             } catch (JSONException e) {
                 e.printStackTrace();

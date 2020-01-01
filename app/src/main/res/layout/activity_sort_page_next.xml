@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/pikaqiu1"
+    android:background="@mipmap/pika"
     android:orientation="vertical"
     tools:context=".SortPageNext">
     <LinearLayout
@@ -26,7 +26,6 @@
 
     <ListView
         android:id="@+id/listview"
-        android:alpha="0.9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#00000000"

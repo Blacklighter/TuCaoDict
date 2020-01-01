@@ -9,6 +9,7 @@
 
 
         <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
+
             android:id="@+id/kindImg"
             android:layout_width="146dp"
             android:layout_height="146dp"
