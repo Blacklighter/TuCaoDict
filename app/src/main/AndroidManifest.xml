@@ -17,6 +17,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
+        android:theme="@style/AppTheme">
+        <activity android:name=".Review">
+        </activity>
+        <activity android:name=".IncreaseSort"></activity>
+        <activity android:name=".SortPageNext" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".HotWordActivity" />
+        <activity android:name=".MineActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".SortPage"></activity>
+        <activity
+            android:name="com.liuguangqiang.ipicker.IPickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/IPickerTheme"></activity>
+=======
         android:theme="@style/AppTheme" >
 
 
@@ -66,6 +91,7 @@
 
 
 
+>>>>>>> 608a1cc86dccbee2d73b22142c7824dcc56697f8
     </application>
 
 </manifest>
