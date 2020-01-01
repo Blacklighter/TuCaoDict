@@ -6,23 +6,29 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".SortPage"
+
 android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
  >
         <TextView
             android:id="@+id/sort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="3"
             android:gravity="center"
             android:layout_centerInParent="true"
             android:text="分类"
             android:textColor="@android:color/holo_blue_light"
-            android:textSize="32sp"></TextView>
+            android:textSize="32sp">
+
+        </TextView>
+
         <ImageView
             android:id="@+id/increase"
             android:layout_alignParentRight="true"
@@ -31,7 +37,7 @@ android:orientation="vertical">
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00000000"
             android:src="@mipmap/increase_sort"></ImageView>
     </RelativeLayout>
 

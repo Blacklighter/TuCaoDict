@@ -3,7 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-
+    <color name="red">#88F58D7F</color>
     <color name="white">#FFFFFF</color>
     <color name="shadow">#C0BEBE</color>
     <color name="sortpagetextcolor">#B8000000</color>

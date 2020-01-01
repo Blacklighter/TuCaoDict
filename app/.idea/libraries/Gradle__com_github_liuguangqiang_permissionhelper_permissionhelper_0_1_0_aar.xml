@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.liuguangqiang.permissionhelper:permissionhelper:0.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82d1d88608151f0e7999d16571fd411e/jetified-permissionhelper-0.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82d1d88608151f0e7999d16571fd411e/jetified-permissionhelper-0.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c2024b837e131cf42eb760b1c8ecafa/jetified-permissionhelper-0.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c2024b837e131cf42eb760b1c8ecafa/jetified-permissionhelper-0.1.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
