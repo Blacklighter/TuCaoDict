@@ -7,7 +7,7 @@ android:layout_height="match_parent"
 android:orientation="vertical"
 android:gravity="center|top"
 android:background="@mipmap/logo"
-tools:context=".check">
+tools:context=".NewOne">
 
 <!--最上方按钮处水平布局-->
 
@@ -16,7 +16,7 @@ tools:context=".check">
     android:layout_height="wrap_content">
 
     <ImageButton
-        android:id="@+id/返回按钮"
+        android:id="@+id/返回"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -27,33 +27,26 @@ tools:context=".check">
         app:srcCompat="@mipmap/return_now" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center"
         android:layout_marginTop="5dp"
-        android:text="审核"
+        android:text="发布新内容"
         android:textSize="20dp" />
 
-    <ImageButton
-        android:id="@+id/审核通过"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@mipmap/yes"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="5dp"
-        android:layout_alignParentRight="true"/>
-
-    <ImageButton
-        android:id="@+id/审核不通过"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="5dp"
-        android:background="@mipmap/no"
-        android:layout_marginRight="5dp"
-        android:layout_alignParentRight="true"/>
+    <Button
+        android:id="@+id/发布"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:text="发布"
+        android:background="#00000000"
+        android:textSize="15dp" />
 
 </RelativeLayout>
 
@@ -74,7 +67,7 @@ tools:context=".check">
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="词条名"
+        android:text="标题"
         android:textSize="20dp" />
 
     <View
@@ -86,8 +79,8 @@ tools:context=".check">
 
     </View>
 
-    <TextView
-        android:id="@+id/标题内容"
+    <EditText
+        android:id="@+id/标题"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
@@ -95,8 +88,9 @@ tools:context=".check">
         android:minLines="1"
         android:scrollbars="vertical"
         android:layout_weight="1"
+        android:gravity="center"
         android:layout_gravity="center"
-        android:gravity="left"
+        android:hint="点击编辑~~~(必填)"
         android:inputType="textMultiLine"
         android:text=""
         android:background="#00000000"
@@ -104,7 +98,7 @@ tools:context=".check">
 
 </LinearLayout>
 
-<ScrollView
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -140,7 +134,7 @@ tools:context=".check">
 
             </View>
 
-            <TextView
+            <EditText
                 android:id="@+id/基本释义"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,8 +143,9 @@ tools:context=".check">
                 android:minLines="1"
                 android:scrollbars="vertical"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:layout_gravity="center"
-                android:gravity="left"
+                android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
                 android:text=""
                 android:background="#00000000"
@@ -185,7 +180,7 @@ tools:context=".check">
 
             </View>
 
-            <TextView
+            <EditText
                 android:id="@+id/适用情形"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -194,8 +189,9 @@ tools:context=".check">
                 android:minLines="1"
                 android:scrollbars="vertical"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:layout_gravity="center"
-                android:gravity="left"
+                android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
                 android:text=""
                 android:background="#00000000"
@@ -230,7 +226,7 @@ tools:context=".check">
 
             </View>
 
-            <TextView
+            <EditText
                 android:id="@+id/来龙去脉"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -239,8 +235,9 @@ tools:context=".check">
                 android:minLines="1"
                 android:scrollbars="vertical"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:layout_gravity="center"
-                android:gravity="left"
+                android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
                 android:text=""
                 android:background="#00000000"
@@ -275,7 +272,7 @@ tools:context=".check">
 
             </View>
 
-            <TextView
+            <EditText
                 android:id="@+id/范例"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -284,8 +281,9 @@ tools:context=".check">
                 android:minLines="1"
                 android:scrollbars="vertical"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:layout_gravity="center"
-                android:gravity="left"
+                android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
                 android:text=""
                 android:background="#00000000"
@@ -305,5 +303,8 @@ tools:context=".check">
     </LinearLayout>
 
 </ScrollView>
+
+
+
 
 </LinearLayout>

@@ -18,11 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".check"></activity>
-        <activity android:name=".IncreaseSort"></activity>
+        <activity android:name=".NewOne"></activity>
+        <activity android:name=".check" />
+        <activity android:name=".IncreaseSort" />
         <activity android:name=".SortPageNext" />
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".HotWordActivity"></activity>
+        <activity android:name=".TestActivity" />
+        <activity android:name=".HotWordActivity" />
         <activity android:name=".SortPage" />
         <activity android:name=".MineActivity" />
         <activity android:name=".MainActivity">
@@ -35,7 +36,7 @@
         <activity
             android:name="com.liuguangqiang.ipicker.IPickerActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/IPickerTheme"></activity>
+            android:theme="@style/IPickerTheme" />
     </application>
 
 </manifest>

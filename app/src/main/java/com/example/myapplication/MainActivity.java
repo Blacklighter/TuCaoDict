@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
     //点击了“新建”按钮
     public void clickCreteOneButton(){
-        Intent intent = new Intent(this,check.class);//声明一个意图
+        Intent intent = new Intent(this,NewOne.class);//声明一个意图
         startActivity(intent);//启动
     }
 
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
     public void initAllTextView(){
 
         //提示框
-        Utils.mysql("SELECT entry_name FROM entry_overview where state = '待审核' order by hot_num desc",
+        Utils.mysql("SELECT entry_name FROM entry_overview where state = '通过' order by hot_num desc",
                 new Handler(){
                     //Message传回，触发该回调函数
                     @Override
