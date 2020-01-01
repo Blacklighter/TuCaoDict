@@ -48,6 +48,15 @@ public class IncreaseSort extends AppCompatActivity {
 
             }
         });
+        Button back=findViewById(R.id.button3);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(IncreaseSort.this,SortPage.class);
+                startActivity(intent);
+                IncreaseSort.this.finish();
+            }
+        });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

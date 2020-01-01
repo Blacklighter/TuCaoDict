@@ -47,7 +47,7 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         mylistview.setOnItemClickListener(this);
     }
     private ArrayList<String> getText(String classname){
-        JSONArray rows = Utils.mysql("SELECT * FROM entry_overview WHERE entry_kinds like '%"+classname+"%'" );
+        JSONArray rows = Utils.mysql("SELECT * FROM entry_overview WHERE entry_kinds like '%"+classname+"%'and state like '通过'" );
         ArrayList<String> arrayList = new ArrayList<>();
 
         for(int i = 0; i < rows.length(); i++){
@@ -64,12 +64,13 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(SortPageNext.this, MainActivity.class);
+        Intent intent = new Intent(SortPageNext.this, HotWordActivity.class);
         Bundle bundle=new Bundle();
         String string;
         TextView textView=(TextView)(view.findViewById(R.id.textview));
         string=(String)textView.getText();
-        bundle.putCharSequence("text",string);
+        bundle.putCharSequence("word",string);
+        bundle.putBoolean("isFinded",false);
         intent.putExtras(bundle);
         startActivity(intent);
         SortPageNext.this.finish();

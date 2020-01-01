@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center|top"
-    android:background="@mipmap/logo"
+    android:background="@drawable/bg_gradient"
     tools:context=".HotWordActivity">
 
     <!--最上方按钮处水平布局-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
         <ImageButton
             android:id="@+id/return_button"
@@ -53,14 +54,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:gravity="left"
-        android:padding="0dp"
-        android:text="海南大学"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="词条名"
+        android:textStyle="bold"
+        android:textSize="30dp"  />
 
     <View
         android:layout_width="match_parent"
@@ -101,9 +100,11 @@
                 android:id="@+id/meaning"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/meaning_shape"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/kind_shape"
                 android:orientation="vertical">
 
                 <!--系统文字与点赞等按钮水平线性布局-->
@@ -111,10 +112,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/background"></View>
+
                     <!--小标题-->
                     <TextView
                         android:id="@+id/meaning_headLine"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
@@ -203,17 +212,25 @@
                 android:id="@+id/material"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/meaning_shape"
-                android:orientation="vertical"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/kind_shape"
+                android:orientation="vertical">
 
                 <!--小标题，与点赞按钮的相对布局-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/background"></View>
                     <!--小标题-->
                     <TextView
                         android:id="@+id/material_head_line"
@@ -306,16 +323,24 @@
                 android:id="@+id/condition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/meaning_shape"
-                android:orientation="vertical"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/kind_shape"
+                android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/background"></View>
                     <!--小标题-->
                     <TextView
                         android:id="@+id/condition_head_line"
@@ -408,17 +433,25 @@
                 android:id="@+id/source"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/meaning_shape"
-                android:orientation="vertical"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/kind_shape"
+                android:orientation="vertical">
 
                 <!--小标题，与点赞按钮的相对布局-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/background"></View>
                     <!--小标题-->
                     <TextView
                         android:id="@+id/source_head_line"
@@ -511,17 +544,25 @@
                 android:id="@+id/example"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/meaning_shape"
-                android:orientation="vertical"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/kind_shape"
+                android:orientation="vertical">
 
                 <!--小标题，与点赞按钮的相对布局-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/background"></View>
                     <!--小标题-->
                     <TextView
                         android:id="@+id/example_head_line"
@@ -614,25 +655,40 @@
                 android:id="@+id/relevant_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/meaning_shape"
-                android:orientation="vertical"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/kind_shape"
+                android:orientation="vertical">
 
-                <!--小标题-->
-                <TextView
-                    android:id="@+id/relevant_content_head_line"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="60dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_weight="1"
-                    android:textSize="20dp"
-                    android:text="相关槽点" />
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/background"></View>
+                    <!--小标题-->
+                    <TextView
+                        android:id="@+id/relevant_content_head_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:text="相关槽点" />
+                </LinearLayout>
+
+
 
                 <View
                     android:layout_width="match_parent"

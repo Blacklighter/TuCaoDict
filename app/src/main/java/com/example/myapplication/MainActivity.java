@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 clickTextView(textView.getText().toString());
             }
         });
+        
         this.getRelevantContent().addView(textView);//加入到流式视图中
     }
 
