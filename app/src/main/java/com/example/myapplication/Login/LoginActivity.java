@@ -8,12 +8,14 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.RegisterActivity;
 import com.example.myapplication.utils.Utils;
 
 import net.lemonsoft.lemonbubble.LemonBubble;
@@ -32,6 +34,7 @@ public class LoginActivity extends Activity {
 
         final Account account = Account.getAccount();
 
+        //登录按钮
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,5 +65,27 @@ public class LoginActivity extends Activity {
                 });
             }
         });
+
+        //注册跳转
+        TextView textView = (TextView)findViewById(R.id.registerText);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Account account = Account.getAccount();
+        final EditText telephone = (EditText)findViewById(R.id.username);
+        final EditText password = (EditText)findViewById(R.id.password);
+        if(account.getTelephone() != null && account.getPassword() != null && account.getTelephone().length()>0 && account.getPassword().length() > 0){
+            telephone.setText(account.getTelephone());
+            password.setText(account.getPassword());
+        }
     }
 }

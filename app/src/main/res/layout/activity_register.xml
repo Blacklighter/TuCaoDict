@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical">
 
         <TextView
@@ -29,13 +29,13 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:text="欢迎使用吐槽词典"
+            android:text="账户注册"
             android:textColor="#F4DB36"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/telephone"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -56,7 +56,7 @@
             >
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/test"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -71,13 +71,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/username" />
 
             <Button
-                android:id="@+id/passwordButton"
+                android:id="@+id/sendRefineText"
                 style="@android:style/Widget.Button"
-                android:background="@drawable/hot_word_tag_shape1"
+                android:backgroundTint="@color/sortpagebgcolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/hot_word_tag_shape1"
 
                 android:enabled="true"
                 android:text="获取验证码"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="以字母开头，8-20位密码"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:selectAllOnFocus="true"
             android:textColor="#000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="再输入一次密码"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:selectAllOnFocus="true"
             android:textColor="#000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +120,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/registerButton"
             style="@android:style/Widget.Button"
             android:backgroundTint="@color/sortpagebgcolor"
             android:layout_width="wrap_content"

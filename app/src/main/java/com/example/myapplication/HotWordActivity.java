@@ -130,16 +130,16 @@ public class HotWordActivity extends AppCompatActivity {
     //s是表示数据库中的数是增加还是减少，likeOrNo表示是like_num还是dislike_num
     //module_kind是模块名字,tel是对应的电话号码
     private void changeSQL(String s,String likeOrNo){
-        Utils.mysql("update modules set "+ likeOrNo +"=" + likeOrNo + s + "1 " +//SQL
-                "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
-                "and module_name = '基本释义';",new Handler(){
+        /*Utils.mysql("update modules set "+ likeOrNo +"=" + likeOrNo + s + "1 " +//SQL
+                " where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
+                " and module_name = '基本释义';",new Handler(){
             //Message传回，触发该回调函数
             @Override
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);
             }
         });
-            if(s.equals("+"))
+            /*if(s.equals("+"))
                 Utils.mysql("insert into like_dislike_record(telephone1,telephone2,entry_name,module_name,islike) " +
                         "values('15172609837','"+getS(this.getMeaningObject())+"'" +
                         ",'"+this.getHeadLine().toString()+"','基本释义','"+getIsLike(s)+"');",new Handler(){
@@ -160,20 +160,20 @@ public class HotWordActivity extends AppCompatActivity {
                     public void handleMessage(@NonNull Message msg) {
                         super.handleMessage(msg);
                     }
-                });
+                });*/
     }
     private void changeSQL(MyLinearLayout layout,String s,String likeOrNo,String module_kind,String tel){
-        Utils.mysql("update modules set "+ likeOrNo +"=" + likeOrNo + s + "1 " +//SQL
+        /*Utils.mysql("update modules set "+ likeOrNo +"=" + likeOrNo + s + "1 " +//SQL
                         "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
-                        "and module_name = '" + module_kind + "' and telephone = '"+tel+"';",
+                        " and module_name = '" + module_kind + "' and telephone = '"+tel+"';",
                 new Handler(){
                     //Message传回，触发该回调函数
                     @Override
                     public void handleMessage(@NonNull Message msg) {
-                        super.handleMessage(msg);
+                        //super.handleMessage(msg);
                     }
                 });
-        if(s.equals("+"))
+        /*if(s.equals("+"))
             Utils.mysql("insert into like_dislike_record(telephone1,telephone2,entry_name,module_name,islike) " +
                     "values('15172609837','"+layout.getTelNum()+"'" +
                     ",'"+this.getHeadLine().toString()+"','"+layout.getModule_name()+"','"+getIsLike(s)+"');",new Handler(){
@@ -194,7 +194,7 @@ public class HotWordActivity extends AppCompatActivity {
                 public void handleMessage(@NonNull Message msg) {
                     super.handleMessage(msg);
                 }
-            });
+            });*/
     }
 
     private String getS(JSONObject j){
@@ -376,8 +376,8 @@ public class HotWordActivity extends AppCompatActivity {
                             }
                         } else {
                             try {
-                                if (jsonObject.getInt("hot_name")
-                                        <= results.getJSONObject(i).getInt("hot_name"))
+                                if (jsonObject.getInt("hot_num")
+                                        <= results.getJSONObject(i).getInt("hot_num"))
                                     jsonObject = results.getJSONObject(i);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -396,9 +396,6 @@ public class HotWordActivity extends AppCompatActivity {
                 }
 
                 initAll();//获取数据并初始化全部
-
-                //提示窗口
-                LemonBubble.showRight(HotWordActivity.this, "数据加载完成！", 1500);
 
             }
 
@@ -434,21 +431,6 @@ public class HotWordActivity extends AppCompatActivity {
                         getHeadLine().setText(jsonObject.getString("entry_name"));
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
-                    String s = null;
-                    try {
-                        s = jsonObject.getString("entry_kinds");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    String s1 = "";
-                    for(int i = 0;i < s.length();i++){
-                        if(s.charAt(i) != ' ')
-                            s1 = s1 + s.charAt(i);
-                        if((s.charAt(i) == ' '|| i == s.length() - 1) && s1.length() != 0){
-                            createTextView(s1,getFlowLayout());
-                            s1 = "";
-                        }
                     }
 
                 }
@@ -486,11 +468,11 @@ public class HotWordActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    String s1 = null;
+                    String s1 = "";
                     for(int i = 0;i < s.length();i++){
                         if(s.charAt(i) != ' ')
                             s1 = s1 + s.charAt(i);
-                        if(s.charAt(i) == ' '&& i == s.length() - 1 && s1.length() != 0){
+                        if((s.charAt(i) == ' '|| i == s.length() - 1) && s1.length() != 0){
                             createTextView(s1,getFlowLayout());
                             s1 = "";
                         }
@@ -601,6 +583,7 @@ public class HotWordActivity extends AppCompatActivity {
                 initCondition();//"适用情形"
                 initSource();//"来龙去脉"
                 initExample();//"范例"
+                initFlowLayout();//初始化相关分类
 
                 //获得对该词条点赞以及未点赞的全部数据
                 Utils.mysql("SELECT * FROM like_dislike_record where entry_name = '" +
@@ -929,4 +912,5 @@ public class HotWordActivity extends AppCompatActivity {
     public JSONArray getAllLikeAndDislike() {
         return allLikeAndDislike;
     }
+
 }
