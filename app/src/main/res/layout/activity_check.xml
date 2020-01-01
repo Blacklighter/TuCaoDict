@@ -8,14 +8,11 @@
     android:gravity="center|top"
     android:orientation="vertical"
     tools:context=".check">
-
-    <!--最上方按钮处水平布局-->
-
+    <!--最上⽅按钮处⽔平布局-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
-
         <ImageButton
             android:id="@+id/return_button"
             android:layout_width="40dp"
@@ -27,7 +24,6 @@
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
             app:srcCompat="@mipmap/return_now" />
-
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -39,20 +35,24 @@
             android:text=""
             android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
+        <ImageButton
+            android:id="@+id/审核通过"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/yes" />
+
+        <ImageButton
+            android:id="@+id/审核不通过"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
-            android:background="@drawable/hot_word_tag_shape"
-            android:text="审核通过"
-            android:textSize="15dp" />
-
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/no" />
     </RelativeLayout>
-
     <!--标题-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,8 +62,6 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:orientation="vertical">
-
-
         <TextView
             android:id="@+id/标题内容"
             android:layout_width="wrap_content"
@@ -75,8 +73,6 @@
             android:text="词条名"
             android:textStyle="bold"
             android:textSize="30dp" />
-
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -85,21 +81,31 @@
             android:layout_marginBottom="5dp"
             android:background="@color/background">
         </View>
-
-
-
-
     </LinearLayout>
+
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/分类"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:flFlow="false"
+        app:flChildSpacing="8dp"
+        app:flRowSpacing="8dp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+    </com.nex3z.flowlayout.FlowLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,11 +115,9 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/kind_shape"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <View
                         android:layout_width="8dp"
                         android:layout_height="20dp"
@@ -121,7 +125,6 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
                         android:background="@color/background"></View>
-
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
@@ -130,7 +133,6 @@
                         android:text="基本释义"
                         android:textSize="20dp" />
                 </LinearLayout>
-
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
@@ -138,8 +140,6 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@color/background"></View>
-
-
                 <TextView
                     android:id="@+id/基本释义"
                     android:layout_width="match_parent"
@@ -155,9 +155,7 @@
                     android:scrollbars="vertical"
                     android:text=""
                     android:textSize="15dp" />
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -167,11 +165,9 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/kind_shape"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <View
                         android:layout_width="8dp"
                         android:layout_height="20dp"
@@ -179,17 +175,14 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
                         android:background="@color/background"></View>
-
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-
                         android:gravity="center"
-                        android:text="适用情形"
+                        android:text="适⽤情形"
                         android:textSize="20dp" />
                 </LinearLayout>
-
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
@@ -197,8 +190,6 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@color/background"></View>
-
-
                 <TextView
                     android:id="@+id/适用情形"
                     android:layout_width="match_parent"
@@ -214,9 +205,7 @@
                     android:scrollbars="vertical"
                     android:text=""
                     android:textSize="15dp" />
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -226,11 +215,9 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/kind_shape"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <View
                         android:layout_width="8dp"
                         android:layout_height="20dp"
@@ -238,17 +225,14 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
                         android:background="@color/background"></View>
-
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-
                         android:gravity="center"
-                        android:text="来龙去脉"
+                        android:text="来⻰去脉"
                         android:textSize="20dp" />
                 </LinearLayout>
-
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
@@ -256,8 +240,6 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@color/background"></View>
-
-
                 <TextView
                     android:id="@+id/来龙去脉"
                     android:layout_width="match_parent"
@@ -273,9 +255,7 @@
                     android:scrollbars="vertical"
                     android:text=""
                     android:textSize="15dp" />
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -285,11 +265,9 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/kind_shape"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <View
                         android:layout_width="8dp"
                         android:layout_height="20dp"
@@ -297,17 +275,14 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
                         android:background="@color/background"></View>
-
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-
                         android:gravity="center"
                         android:text="范例"
                         android:textSize="20dp" />
                 </LinearLayout>
-
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
@@ -315,8 +290,6 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@color/background"></View>
-
-
                 <TextView
                     android:id="@+id/范例"
                     android:layout_width="match_parent"
@@ -332,7 +305,6 @@
                     android:scrollbars="vertical"
                     android:text=""
                     android:textSize="15dp" />
-
             </LinearLayout>
             <TextView
                 android:id="@+id/textView"
@@ -342,10 +314,6 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="吐槽是有底线的~~~" />
-
         </LinearLayout>
-
     </ScrollView>
-
-
 </LinearLayout>
