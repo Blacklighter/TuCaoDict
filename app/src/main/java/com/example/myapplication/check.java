@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.myapplication.utils.Utils;
@@ -24,6 +25,8 @@ public class check extends AppCompatActivity {
     private String stringFromLastActivity,meaningText,conditionText,sourceText,exampleText;
     private TextView headLine,meaning,condition,source,example;//每个具体的组件
     private JSONArray allJsonObject;
+    private com.nex3z.flowlayout.FlowLayout flowLayout;
+    private EditText editText = new EditText(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +40,20 @@ public class check extends AppCompatActivity {
         this.setSource((TextView)findViewById(R.id.来龙去脉));
         this.setExample((TextView)findViewById(R.id.范例));
 
+        editText.setHint("+");
+        flowLayout.addView(editText);
+
         Intent intent = getIntent();//获取前一个页面传来的意图
         Bundle bundle = intent.getExtras();//打开包裹
         this.setStringFromLastActivity(bundle.getString("word"));
+
+        flowLayout = (com.nex3z.flowlayout.FlowLayout)findViewById(R.id.分类);
 
         findViewById(R.id.审核通过).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Utils.mysql("update entry_overview set state = '通过' where entry_name = '" +
+                Utils.mysql("update entry_overview set entry_kinds = '"+editText.getText().toString()+"'state = '通过' where entry_name = '" +
                         getStringFromLastActivity() + "';",new Handler(){
                     //Message传回，触发该回调函数
                     @Override
@@ -79,10 +87,12 @@ public class check extends AppCompatActivity {
 
         });
 
+        initAll();
+
     }
 
     private void initAll(){
-
+        getAllDate();
     }
 
     private void getAllDate(){
