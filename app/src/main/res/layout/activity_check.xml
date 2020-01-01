@@ -126,7 +126,6 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-
                         android:gravity="center"
                         android:text="基本释义"
                         android:textSize="20dp" />
