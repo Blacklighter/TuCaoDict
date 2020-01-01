@@ -62,11 +62,20 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </View>
+
     <com.nex3z.flowlayout.FlowLayout
         android:id="@+id/correlation_with_this"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:flFlow="false"
         app:flChildSpacing="8dp"
         app:flRowSpacing="8dp"
@@ -75,14 +84,6 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp">
-
-        <!--实验标签-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="相关分类"
-            android:textSize="11dp"
-            android:background="@drawable/hot_word_tag_shape"/>
 
     </com.nex3z.flowlayout.FlowLayout>
 
@@ -135,7 +136,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_weight="1"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/good" />
+                        app:srcCompat="@drawable/good" />
 
                     <!--点赞数量显示-->
                     <TextView
@@ -161,7 +162,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/bad" />
+                        app:srcCompat="@drawable/bad" />
 
                     <!--不喜欢数量显示-->
                     <TextView
@@ -178,6 +179,15 @@
 
 
                 </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                </View>
 
                 <!--释义内容-->
                 <TextView
@@ -229,7 +239,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="2dp"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/good" />
+                        app:srcCompat="@drawable/good" />
 
                     <!--点赞数量显示-->
                     <TextView
@@ -255,7 +265,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/bad" />
+                        app:srcCompat="@drawable/bad" />
 
                     <!--不喜欢数量显示-->
                     <TextView
@@ -271,6 +281,15 @@
                         android:text="" />
 
                 </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                </View>
 
                 <!--“相关资料”翻页视图-->
                 <androidx.viewpager.widget.ViewPager
@@ -322,7 +341,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="2dp"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/good" />
+                        app:srcCompat="@drawable/good" />
 
                     <!--点赞数量显示-->
                     <TextView
@@ -348,7 +367,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/bad" />
+                        app:srcCompat="@drawable/bad" />
 
                     <!--不喜欢数量显示-->
                     <TextView
@@ -365,11 +384,20 @@
 
                 </RelativeLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                </View>
+
                 <!--“适用情形”翻页视图-->
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/condition_part"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp" />
 
@@ -416,7 +444,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="2dp"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/good" />
+                        app:srcCompat="@drawable/good" />
 
                     <!--点赞数量显示-->
                     <TextView
@@ -442,7 +470,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/bad" />
+                        app:srcCompat="@drawable/bad" />
 
                     <!--不喜欢数量显示-->
                     <TextView
@@ -459,11 +487,20 @@
 
                 </RelativeLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                </View>
+
                 <!--“来龙去脉”翻页视图-->
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/source_part"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"/>
 
@@ -510,7 +547,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="2dp"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/good" />
+                        app:srcCompat="@drawable/good" />
 
                     <!--点赞数量显示-->
                     <TextView
@@ -536,7 +573,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
                         android:background="#00000000"
-                        app:srcCompat="@mipmap/bad" />
+                        app:srcCompat="@drawable/bad" />
 
                     <!--不喜欢数量显示-->
                     <TextView
@@ -553,11 +590,20 @@
 
                 </RelativeLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                </View>
+
                 <!--“范例”翻页视图-->
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/example_part"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"/>
 
@@ -588,6 +634,15 @@
                     android:textSize="20dp"
                     android:text="相关槽点" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                </View>
+
                 <!--底部系统相关热词-->
                 <com.nex3z.flowlayout.FlowLayout
                     android:id="@+id/relevant_content_part"
@@ -615,7 +670,7 @@
                 android:gravity="center"
                 android:clickable="false"
                 android:focusable="false"
-                android:text="我是有底线的~~~" />
+                android:text="吐槽是有底线的~~~" />
 
         </LinearLayout>
 

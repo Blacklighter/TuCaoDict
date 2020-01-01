@@ -30,7 +30,6 @@
         android:text="吐槽百科词典"
         android:layout_marginTop="10dp"
         android:textSize="30dp" />
->>>>>>> f0652ac41fb20acaf43114b88593837131f7c8a1
 
     <!--首页存放搜索一栏的线性布局-->
     <LinearLayout
@@ -50,7 +49,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00000000"
             app:srcCompat="@mipmap/camera_button" />
 
         <!--文字输入处-->
@@ -59,11 +58,13 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/hot_word_tag_shape"
             android:ems="5"
             android:textSize="20dp"
             android:focusable="auto"
             android:inputType="textPersonName"
             android:hint="吐槽热词..."
+            android:layout_gravity="center"
             android:text="" />
 
         <!--搜索按钮-->
@@ -72,7 +73,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00000000"
             app:srcCompat="@mipmap/find_button" />
 
     </LinearLayout>
@@ -93,11 +94,6 @@
 
     </com.nex3z.flowlayout.FlowLayout>
 
-
-    <!--“我的”按钮-->
-
-
-
     <!--“我的”按钮-->
     <ImageButton
         android:id="@+id/mine_button"
@@ -110,15 +106,6 @@
         android:background="#00000000"
         app:srcCompat="@mipmap/mine" />
 
-
-<!--    <Button-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Button"-->
-<!--        tools:layout_editor_absoluteX="176dp"-->
-<!--        tools:layout_editor_absoluteY="476dp" />-->
-
     <ImageButton
         android:id="@+id/crete_one_button"
         android:layout_width="wrap_content"
@@ -126,38 +113,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
         android:background="#00000000"
         app:srcCompat="@mipmap/new_one" />
 </RelativeLayout>
-
-
-
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".MainActivity">-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Hello World!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Button"-->
-<!--        tools:layout_editor_absoluteX="176dp"-->
-<!--        tools:layout_editor_absoluteY="476dp" />-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <ImageButton
         android:id="@+id/classification_button"
@@ -168,7 +126,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="#00000000"
-        app:srcCompat="@mipmap/mine" />
+        app:srcCompat="@mipmap/fenlei" />
     <!--“我的”按钮-->
 
 
