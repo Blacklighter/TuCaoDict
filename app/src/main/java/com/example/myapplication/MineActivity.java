@@ -36,7 +36,7 @@ public class MineActivity extends AppCompatActivity {
                 "消息通知", "联系客服"}; // 定义并初始化保存列表项文字的数组
 
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // 创建一个list集合
-        Account account = new Account();
+        Account account = Account.getAccount();
         onCreate(new Bundle());
         LemonBubble.showRoundProgress(MineActivity.this,"账户名加载中....");
 

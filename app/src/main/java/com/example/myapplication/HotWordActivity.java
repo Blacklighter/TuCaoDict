@@ -67,7 +67,7 @@ public class HotWordActivity extends AppCompatActivity {
                 (TextView) findViewById(R.id.num_of_good_for_condition),
                 (ImageButton) findViewById(R.id.bad_button_for_condition),
                 (TextView) findViewById(R.id.num_of_bad_for_condition),
-                this, (ViewPager) findViewById(R.id.condition_part));
+                this, (ViewPager) findViewById(R.id.condition_part),"适用情形");
 
         //来龙去脉
         this.source = new MyLinearLayout((LinearLayout) findViewById(R.id.source),
@@ -76,7 +76,7 @@ public class HotWordActivity extends AppCompatActivity {
                 (TextView) findViewById(R.id.num_of_good_for_source),
                 (ImageButton) findViewById(R.id.bad_button_for_source),
                 (TextView) findViewById(R.id.num_of_bad_for_source),
-                this, (ViewPager) findViewById(R.id.source_part));
+                this, (ViewPager) findViewById(R.id.source_part),"来龙去脉");
 
         //范例
         this.example = new MyLinearLayout((LinearLayout) findViewById(R.id.example),
@@ -85,7 +85,7 @@ public class HotWordActivity extends AppCompatActivity {
                 (TextView) findViewById(R.id.num_of_good_for_example),
                 (ImageButton) findViewById(R.id.bad_button_for_example),
                 (TextView) findViewById(R.id.num_of_bad_for_example),
-                this, (ViewPager) findViewById(R.id.example_part));
+                this, (ViewPager) findViewById(R.id.example_part),"范例");
 
         //相关槽点
         this.relevantContent = new RelevantContent(
@@ -108,6 +108,7 @@ public class HotWordActivity extends AppCompatActivity {
         Intent intent = getIntent();//获取前一个页面传来的意图
         Bundle bundle = intent.getExtras();//打开包裹
         this.setStringFromLastActivity(bundle.getString("word"));//修改字符串
+
         if (bundle.getBoolean("ifFinded"))//判断标志位
             init1();//首页进入
         else
@@ -125,70 +126,115 @@ public class HotWordActivity extends AppCompatActivity {
         //实现部分，较为复杂，如果需要动画，可能需要参考其他现成品
     }
 
+    //两个重构方法、用于点击按钮之后改变相应的数据库数值
+    //s是表示数据库中的数是增加还是减少，likeOrNo表示是like_num还是dislike_num
+    //module_kind是模块名字,tel是对应的电话号码
+    private void changeSQL(String s,String likeOrNo){
+        Utils.mysql("update modules set "+ likeOrNo +"=" + likeOrNo + s + "1 " +//SQL
+                "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
+                "and module_name = '基本释义';",new Handler(){
+            //Message传回，触发该回调函数
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+            }
+        });
+            if(s.equals("+"))
+                Utils.mysql("insert into like_dislike_record(telephone1,telephone2,entry_name,module_name,islike) " +
+                        "values('15172609837','"+getS(this.getMeaningObject())+"'" +
+                        ",'"+this.getHeadLine().toString()+"','基本释义','"+getIsLike(s)+"');",new Handler(){
+                    //Message传回，触发该回调函数
+                    @Override
+                    public void handleMessage(@NonNull Message msg) {
+                        super.handleMessage(msg);
+                    }
+                });
+            else
+                Utils.mysql("delete from like_dislike_record " +
+                        "where telephone1 = '15172609837' and " +
+                        "telephone2 = '" + getS(this.getMeaningObject()) +
+                        "' and entry_name = '" + this.getHeadLine().toString() + "'" +
+                        "and module_name = '基本释义' and is_like ='" + getIsLike(s) + "';" ,new Handler(){
+                    //Message传回，触发该回调函数
+                    @Override
+                    public void handleMessage(@NonNull Message msg) {
+                        super.handleMessage(msg);
+                    }
+                });
+    }
+    private void changeSQL(MyLinearLayout layout,String s,String likeOrNo,String module_kind,String tel){
+        Utils.mysql("update modules set "+ likeOrNo +"=" + likeOrNo + s + "1 " +//SQL
+                        "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
+                        "and module_name = '" + module_kind + "' and telephone = '"+tel+"';",
+                new Handler(){
+                    //Message传回，触发该回调函数
+                    @Override
+                    public void handleMessage(@NonNull Message msg) {
+                        super.handleMessage(msg);
+                    }
+                });
+        if(s.equals("+"))
+            Utils.mysql("insert into like_dislike_record(telephone1,telephone2,entry_name,module_name,islike) " +
+                    "values('15172609837','"+layout.getTelNum()+"'" +
+                    ",'"+this.getHeadLine().toString()+"','"+layout.getModule_name()+"','"+getIsLike(s)+"');",new Handler(){
+                //Message传回，触发该回调函数
+                @Override
+                public void handleMessage(@NonNull Message msg) {
+                    super.handleMessage(msg);
+                }
+            });
+        else
+            Utils.mysql("delete from like_dislike_record " +
+                    "where telephone1 = '15172609837' and " +
+                    "telephone2 = '"+layout.getTelNum()+
+                    "' and entry_name = '"+this.getHeadLine().toString()+"'" +
+                    "and module_name = '"+layout.getModule_name()+"' and is_like ='"+getIsLike(s)+"';",new Handler(){
+                //Message传回，触发该回调函数
+                @Override
+                public void handleMessage(@NonNull Message msg) {
+                    super.handleMessage(msg);
+                }
+            });
+    }
+
+    private String getS(JSONObject j){
+        String s = null;
+        try {
+            s = j.getString("telephone");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return s;
+    }
+    private String getIsLike(String s){
+        return s.equals("like")?"true":"false";
+    }
+
     //任何地方点击了“点赞”按钮，调用clickGoodButton()方法
     public void clickGoodButton(GoodOrBadButton goodButton,View v) {
         //修改图片和标志位、数值
         if(goodButton.isClick()){//从点过赞到未点赞
 
             //修改服务器中的数据
-            if(v == getMeaning().getGoodButton().getImageButton()){//点击了“基本释义”一栏的按钮
+            if(v == this.getMeaning().getGoodButton().getImageButton()){//点击了“基本释义”一栏的按钮
 
-                Utils.mysql("update from modules set like_num = like_num - 1 " +//SQL
-                        "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
-                        "and modules_kind = '基本释义';",new Handler(){
-                    //Message传回，触发该回调函数
-                    @Override
-                    public void handleMessage(@NonNull Message msg) {
-                        super.handleMessage(msg);
-                        /*try {
-                            getMeaningObject().getInt("like_num") = getMeaningObject().getInt("like_num") - 1;
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*/
-                    }
-                });
+                changeSQL("-","like_num");
 
             }
             //缺“相关资料”一栏的按钮的处理
             else if(v == getCondition().getGoodButton().getImageButton()){//点击了“适用情形”一栏的按钮
 
-                Utils.mysql("update from modules set like_num = like_num - 1 " +//SQL
-                                "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
-                                "and modules_kind = '适用情形' and telephone = '"+this.getCondition().getTelNum()+"';",
-                        new Handler(){
-                            //Message传回，触发该回调函数
-                            @Override
-                            public void handleMessage(@NonNull Message msg) {
-                                super.handleMessage(msg);
-                            }
-                        });
+                changeSQL(this.getCondition(),"-","like_num","适用情形",this.getCondition().getTelNum());
 
             }
             else if(v == getSource().getGoodButton().getImageButton()){//点击了“来龙去脉”一栏的按钮
 
-                Utils.mysql("update from modules set like_num = like_num - 1 " +//SQL
-                                "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
-                                "and modules_kind = '适用情形' and telephone = '"+this.getSource().getTelNum()+"';",
-                        new Handler(){
-                            //Message传回，触发该回调函数
-                            @Override
-                            public void handleMessage(@NonNull Message msg) {
-                                super.handleMessage(msg);
-                            }
-                        });
+                changeSQL(this.getSource(),"-","like_num","来龙去脉",this.getSource().getTelNum());
+
             }
             else if(v == getExample().getGoodButton().getImageButton()){//点击了“范例”一栏的按钮
 
-                Utils.mysql("update from modules set like_num = like_num - 1 " +//SQL
-                                "where entry_name = '" + this.getHeadLine().getText().toString() +"'" +
-                                "and modules_kind = '适用情形' and telephone = '"+this.getExample().getTelNum()+"';",
-                        new Handler(){
-                            //Message传回，触发该回调函数
-                            @Override
-                            public void handleMessage(@NonNull Message msg) {
-                                super.handleMessage(msg);
-                            }
-                        });
+                changeSQL(this.getExample(),"-","like_num","范例",this.getExample().getTelNum());
 
             }
 
@@ -198,70 +244,107 @@ public class HotWordActivity extends AppCompatActivity {
             goodButton.getImageButton().setImageResource(R.drawable.good);
 
         }
+
         else {//从未点赞到点赞
+
+            //修改服务器中的数据
+            if (goodButton.isClick()) {//从点过赞到未点赞
+
+                //修改服务器中的数据
+                if (v == this.getMeaning().getGoodButton().getImageButton()) {//点击了“基本释义”一栏的按钮
+
+                    changeSQL("+", "like_num");
+
+                }
+                //缺“相关资料”一栏的按钮的处理
+                else if (v == getCondition().getGoodButton().getImageButton()) {//点击了“适用情形”一栏的按钮
+
+                    changeSQL(this.getCondition(),"+", "like_num", "适用情形", this.getCondition().getTelNum());
+
+                } else if (v == getSource().getGoodButton().getImageButton()) {//点击了“来龙去脉”一栏的按钮
+
+                    changeSQL(this.getSource(),"+", "like_num", "来龙去脉", this.getSource().getTelNum());
+
+                } else if (v == getExample().getGoodButton().getImageButton()) {//点击了“范例”一栏的按钮
+
+                    changeSQL(this.getExample(),"+", "like_num", "范例", this.getExample().getTelNum());
+
+                }
+
+            }
+
             goodButton.setIsClick(true);
             goodButton.upDate(goodButton.getNumber() + 1);
             goodButton.getImageButton().setImageResource(R.drawable.isgood);
 
-            //修改服务器中的数据
-            if(v == getMeaning().getGoodButton().getImageButton()){//点击了“基本释义”一栏的按钮
-
-            }
-            //缺“相关资料”一栏的按钮的处理
-            else if(v == getCondition().getGoodButton().getImageButton()){//点击了“适用情形”一栏的按钮
-
-            }
-            else if(v == getSource().getGoodButton().getImageButton()){//点击了“来龙去脉”一栏的按钮
-
-            }
-            else if(v == getExample().getGoodButton().getImageButton()){//点击了“范例”一栏的按钮
-
-            }
         }
+
     }
 
     //任何地方点击了“踩”按钮，调用clickBadButton()方法
     public void clickBadButton(GoodOrBadButton badButton,View v) {
+
         //修改图片和标志位、数值
         if(badButton.isClick()){//从踩到不踩
+
+            //修改服务器中的数据
+            if(v == this.getMeaning().getBadButton().getImageButton()){//点击了“基本释义”一栏的按钮
+
+                changeSQL("-","dislike_num");
+
+            }
+            //缺“相关资料”一栏的按钮的处理
+            else if(v == getCondition().getBadButton().getImageButton()){//点击了“适用情形”一栏的按钮
+
+                changeSQL(this.getCondition(),"-","dislike_num","适用情形",this.getCondition().getTelNum());
+
+            }
+            else if(v == getSource().getBadButton().getImageButton()){//点击了“来龙去脉”一栏的按钮
+
+                changeSQL(this.getSource(),"-","dislike_num","来龙去脉",this.getSource().getTelNum());
+
+            }
+            else if(v == getExample().getBadButton().getImageButton()){//点击了“范例”一栏的按钮
+
+                changeSQL(this.getExample(),"-","dislike_num","范例",this.getExample().getTelNum());
+
+            }
+
+            //修改本地
             badButton.setIsClick(false);
             badButton.upDate(badButton.getNumber() - 1);
             badButton.getImageButton().setImageResource(R.drawable.bad);
 
+        }
+        else {//从不踩到踩
+
             //修改服务器中的数据
-            if(v == getMeaning().getBadButton().getImageButton()){//点击了“基本释义”一栏的按钮
+            if(v == this.getMeaning().getBadButton().getImageButton()){//点击了“基本释义”一栏的按钮
+
+                changeSQL("+","dislike_num");
 
             }
             //缺“相关资料”一栏的按钮的处理
             else if(v == getCondition().getBadButton().getImageButton()){//点击了“适用情形”一栏的按钮
 
+                changeSQL(this.getCondition(),"+","dislike_num","适用情形",this.getCondition().getTelNum());
+
             }
             else if(v == getSource().getBadButton().getImageButton()){//点击了“来龙去脉”一栏的按钮
+
+                changeSQL(this.getSource(),"+","dislike_num","来龙去脉",this.getSource().getTelNum());
 
             }
             else if(v == getExample().getBadButton().getImageButton()){//点击了“范例”一栏的按钮
 
+                changeSQL(this.getExample(),"+","dislike_num","范例",this.getExample().getTelNum());
+
             }
-        }
-        else {//从不踩到踩
+
+            //修改本地
             badButton.setIsClick(true);
             badButton.upDate(badButton.getNumber() + 1);
             badButton.getImageButton().setImageResource(R.drawable.isbad);
-
-            //修改服务器中的数据
-            if(v == getMeaning().getBadButton().getImageButton()){//点击了“基本释义”一栏的按钮
-
-            }
-            //缺“相关资料”一栏的按钮的处理
-            else if(v == getCondition().getBadButton().getImageButton()){//点击了“适用情形”一栏的按钮
-
-            }
-            else if(v == getSource().getBadButton().getImageButton()){//点击了“来龙去脉”一栏的按钮
-
-            }
-            else if(v == getExample().getBadButton().getImageButton()){//点击了“范例”一栏的按钮
-
-            }
         }
     }
 
@@ -324,7 +407,9 @@ public class HotWordActivity extends AppCompatActivity {
 
     //初始化页面(详情页点击“相关槽点”或首页点击“热门槽点”时使用)
     public void init2() {
+
         LemonBubble.showRoundProgress(HotWordActivity.this,"加载中");
+
         Utils.mysql("SELECT * FROM entry_overview where entry_name = '" +
                 this.getStringFromLastActivity() + "';",true,new Handler(){
             //Message传回，触发该回调函数
@@ -350,6 +435,21 @@ public class HotWordActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+                    String s = null;
+                    try {
+                        s = jsonObject.getString("entry_kinds");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    String s1 = "";
+                    for(int i = 0;i < s.length();i++){
+                        if(s.charAt(i) != ' ')
+                            s1 = s1 + s.charAt(i);
+                        if((s.charAt(i) == ' '|| i == s.length() - 1) && s1.length() != 0){
+                            createTextView(s1,getFlowLayout());
+                            s1 = "";
+                        }
+                    }
 
                 }
 
@@ -363,6 +463,43 @@ public class HotWordActivity extends AppCompatActivity {
 
     //设置“相关分类”一栏
     private void initFlowLayout(){
+
+        Utils.mysql("SELECT entry_kinds FROM entry_overview where entry_name = '" +
+                getHeadLine().getText().toString() + "';",new Handler(){
+            //Message传回，触发该回调函数
+
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                super.handleMessage(msg);
+
+                JSONArray results = (JSONArray)msg.obj;
+                if(results.length() == 1){
+                    JSONObject jsonObject = null;
+                    try {
+                        jsonObject = results.getJSONObject(0);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    String s = null;
+                    try {
+                        s = jsonObject.getString("entry_kinds");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    String s1 = null;
+                    for(int i = 0;i < s.length();i++){
+                        if(s.charAt(i) != ' ')
+                            s1 = s1 + s.charAt(i);
+                        if(s.charAt(i) == ' '&& i == s.length() - 1 && s1.length() != 0){
+                            createTextView(s1,getFlowLayout());
+                            s1 = "";
+                        }
+                    }
+                }
+
+            }
+
+        });
 
     }
 
@@ -429,11 +566,10 @@ public class HotWordActivity extends AppCompatActivity {
     }
 
     //新建一个新的标签
-    private void createTextView(String string) {
+    private void createTextView(String string,com.nex3z.flowlayout.FlowLayout flowLayout) {
         final TextView textView = new TextView(this);
         textView.setText(string);
         MyStyleTextView myStyleTextView = new MyStyleTextView(textView, this);
-        this.getRelevantContent().getFlowLayout().addView(textView);
         //设置监听器
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -441,6 +577,9 @@ public class HotWordActivity extends AppCompatActivity {
                 clickTextView(textView.getText().toString());
             }
         });
+
+        flowLayout.addView(textView);
+
     }
 
     //从数据库一口气获得所有的内容
@@ -478,8 +617,6 @@ public class HotWordActivity extends AppCompatActivity {
                         LemonBubble.showRight(HotWordActivity.this,"OK",1500);
 
                     }
-
-
 
                 });
 
@@ -521,8 +658,9 @@ public class HotWordActivity extends AppCompatActivity {
         sortArrayList(this.getExample().getJsonObjects());//“范例”
     }
 
-    //排序
+    //排序算法
     private void sortArrayList(ArrayList<JSONObject> arrayList){
+
         int n;
         do{
             n = 0;
@@ -540,6 +678,7 @@ public class HotWordActivity extends AppCompatActivity {
                 }
             }
         }while (n != 0);
+
     }
 
     //为“适用情形”“来龙去脉”“范例”设置基本的适配器等内容
@@ -597,6 +736,7 @@ public class HotWordActivity extends AppCompatActivity {
 
     }
 
+    ////修改点赞按钮图片以及点赞数数值以及标志位，tel2是被点赞用户的电话号码，moduleName是模块名
     private void changeButton(final GoodOrBadButton goodButton, final GoodOrBadButton badButton){
 
         for(int i = 0,j = 0;i < this.getAllLikeAndDislike().length() && j != 2;i++){
@@ -619,8 +759,8 @@ public class HotWordActivity extends AppCompatActivity {
                         this.getAllLikeAndDislike().getJSONObject(i).getString("module_name").equals("基本释义") &&
                         this.getAllLikeAndDislike().getJSONObject(i).getString("is_like").equals("false")){
 
-                    goodButton.getImageButton().setImageResource(R.drawable.isgood);
-                    goodButton.setIsClick(true);
+                    badButton.getImageButton().setImageResource(R.drawable.isbad);
+                    badButton.setIsClick(true);
                     j++;
 
                 }
@@ -632,11 +772,8 @@ public class HotWordActivity extends AppCompatActivity {
         }
 
     }
-
-    //修改点赞按钮图片以及点赞数数值以及标志位，tel2是被点赞用户的电话号码，moduleName是模块名
     private void changeButton(String tel2, String moduleName,
                               final GoodOrBadButton goodButton, final GoodOrBadButton badButton){
-        //tel1后续需要修改，根据注册用户号码动态确定
 
         for(int i = 0,j = 0;i < this.getAllLikeAndDislike().length() && j != 2;i++){
 
