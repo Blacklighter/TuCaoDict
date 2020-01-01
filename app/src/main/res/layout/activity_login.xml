@@ -97,6 +97,7 @@
             android:id="@+id/registerText"
             android:layout_margin="20dp"
             android:gravity="center"
+            android:textColor="@color/smssdk_gray"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="还没有账号？点击这里注册"></TextView>

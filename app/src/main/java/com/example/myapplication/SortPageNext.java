@@ -35,14 +35,13 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View v) {
                 Intent intent=new Intent(SortPageNext.this, SortPage.class);
                 startActivity(intent);
-                SortPageNext.this.finish();
             }
         });
 
     }
     private void addList(ArrayList<String> name){
         ListView mylistview=(ListView)findViewById(R.id.listview);
-        ArrayAdapter<String> myAdapter=new ArrayAdapter<String>(SortPageNext.this,R.layout.sortpagetext,R.id.textview,name);
+        ArrayAdapter<String> myAdapter=new ArrayAdapter<String>(SortPageNext.this,R.layout.card,R.id.card,name);
         mylistview.setAdapter(myAdapter);
         mylistview.setOnItemClickListener(this);
     }
@@ -67,13 +66,12 @@ public class SortPageNext extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(SortPageNext.this, HotWordActivity.class);
         Bundle bundle=new Bundle();
         String string;
-        TextView textView=(TextView)(view.findViewById(R.id.textview));
+        TextView textView=(TextView)(view.findViewById(R.id.card));
         string=(String)textView.getText();
         bundle.putCharSequence("word",string);
         bundle.putBoolean("isFinded",false);
         intent.putExtras(bundle);
         startActivity(intent);
-        SortPageNext.this.finish();
     }
 }
 

@@ -9,9 +9,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:orientation="vertical"
     android:background="@mipmap/logo"
     android:layout_width="match_parent"
@@ -19,29 +17,19 @@
     tools:context=".MainActivity">
 
     <!--首页的“标题”-->
-    <TextView
-        android:id="@+id/head_line"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="吐槽百科词典"
-        android:layout_marginTop="10dp"
-        android:textSize="30dp" />
 
     <!--首页存放搜索一栏的线性布局-->
     <LinearLayout
         android:id="@+id/find_layout"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:background="@color/white"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:orientation="horizontal">
+        android:background="@drawable/smssdk_authorize_dialog_bg"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <!--左侧的按钮-->
         <ImageButton
@@ -57,15 +45,15 @@
             android:id="@+id/find_edit"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@drawable/hot_word_tag_shape"
             android:ems="5"
-            android:textSize="20dp"
             android:focusable="auto"
-            android:inputType="textPersonName"
             android:hint="吐槽热词..."
-            android:layout_gravity="center"
-            android:text="" />
+            android:inputType="textPersonName"
+            android:text=""
+            android:textSize="20dp" />
 
         <!--搜索按钮-->
         <ImageButton
@@ -94,39 +82,48 @@
 
     </com.nex3z.flowlayout.FlowLayout>
 
-    <!--“我的”按钮-->
-    <ImageButton
-        android:id="@+id/mine_button"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#00000000"
-        app:srcCompat="@mipmap/mine" />
+        android:layout_marginTop="15dp"
+        >
 
-    <ImageButton
-        android:id="@+id/crete_one_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="50dp"
-        android:background="#00000000"
-        app:srcCompat="@mipmap/new_one" />
+
+        <ImageButton
+            android:id="@+id/mine_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            app:srcCompat="@mipmap/mine" />
+
+
+        <ImageButton
+            android:id="@+id/crete_one_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/classification_button"
+            android:layout_marginRight="20dp"
+            android:background="#00000000"
+            app:srcCompat="@mipmap/new_one" />
+        <ImageButton
+            android:id="@+id/classification_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#00000000"
+            app:srcCompat="@mipmap/fenlei" />
+    </RelativeLayout>
+    <!--“我的”按钮-->
+
 </RelativeLayout>
 
-    <ImageButton
-        android:id="@+id/classification_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="#00000000"
-        app:srcCompat="@mipmap/fenlei" />
+
     <!--“我的”按钮-->
 
 

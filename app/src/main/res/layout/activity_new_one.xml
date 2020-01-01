@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:gravity="center|top"
-android:background="@mipmap/logo"
+android:background="@drawable/bg_gradient"
 tools:context=".NewOne">
 
 <!--最上方按钮处水平布局-->
@@ -32,6 +32,7 @@ tools:context=".NewOne">
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center"
+        android:textColor="@color/white"
         android:layout_marginTop="5dp"
         android:text="发布新内容"
         android:textSize="20dp" />
@@ -42,6 +43,7 @@ tools:context=".NewOne">
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:textColor="@color/white"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:text="发布"
@@ -51,52 +53,63 @@ tools:context=".NewOne">
 </RelativeLayout>
 
 <!--标题-->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginRight="5dp"
-    android:background="@drawable/new_one_shape"
-    android:orientation="horizontal">
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="标题"
-        android:textSize="20dp" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="@color/background">
-
-    </View>
-
-    <EditText
-        android:id="@+id/标题"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:enabled="true"
-        android:minLines="1"
-        android:scrollbars="vertical"
-        android:layout_weight="1"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:hint="点击编辑~~~(必填)"
-        android:inputType="textMultiLine"
+        android:layout_margin="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/kind_shape"
+        android:elevation="10dp"
+        android:translationZ="5dp"
+        android:paddingStart="10dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="20dp"
         android:text=""
-        android:background="#00000000"
-        android:textSize="15dp" />
+        android:textAlignment="center"
+        android:textColor="@color/smssdk_black"
+        android:textSize="25sp"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/smssdk_black"
+            android:text="标题"
+            android:textSize="20dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/background">
+
+        </View>
+
+        <EditText
+            android:id="@+id/标题"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:enabled="true"
+            android:gravity="center"
+            android:hint="点击编辑~~~(必填)"
+            android:inputType="textMultiLine"
+            android:minLines="1"
+            android:scrollbars="vertical"
+            android:text=""
+            android:textSize="15dp" />
+
+    </LinearLayout>
 
     <ScrollView
     android:layout_width="match_parent"
@@ -110,12 +123,21 @@ tools:context=".NewOne">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/new_one_shape"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/kind_shape"
+            android:elevation="10dp"
+            android:translationZ="5dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="20dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/smssdk_black"
+            android:textSize="25sp"
             android:orientation="horizontal">
-
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -123,6 +145,7 @@ tools:context=".NewOne">
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="基本释义"
+                android:textColor="@color/smssdk_black"
                 android:textSize="20dp" />
 
             <View
@@ -138,17 +161,17 @@ tools:context=".NewOne">
                 android:id="@+id/基本释义"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:enabled="true"
-                android:minLines="1"
-                android:scrollbars="vertical"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:enabled="true"
+                android:gravity="center"
                 android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
+                android:minLines="1"
+                android:scrollbars="vertical"
                 android:text=""
-                android:background="#00000000"
                 android:textSize="15dp" />
 
         </LinearLayout>
@@ -156,10 +179,20 @@ tools:context=".NewOne">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/new_one_shape"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/kind_shape"
+            android:elevation="10dp"
+            android:translationZ="5dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="20dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/smssdk_black"
+            android:textSize="25sp"
             android:orientation="horizontal">
 
             <TextView
@@ -169,6 +202,7 @@ tools:context=".NewOne">
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="适用情形"
+                android:textColor="@color/smssdk_black"
                 android:textSize="20dp" />
 
             <View
@@ -184,17 +218,17 @@ tools:context=".NewOne">
                 android:id="@+id/适用情形"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:enabled="true"
-                android:minLines="1"
-                android:scrollbars="vertical"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:enabled="true"
+                android:gravity="center"
                 android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
+                android:minLines="1"
+                android:scrollbars="vertical"
                 android:text=""
-                android:background="#00000000"
                 android:textSize="15dp" />
 
         </LinearLayout>
@@ -202,10 +236,20 @@ tools:context=".NewOne">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/new_one_shape"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/kind_shape"
+            android:elevation="10dp"
+            android:translationZ="5dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="20dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/smssdk_black"
+            android:textSize="25sp"
             android:orientation="horizontal">
 
             <TextView
@@ -215,6 +259,7 @@ tools:context=".NewOne">
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="来龙去脉"
+                android:textColor="@color/smssdk_black"
                 android:textSize="20dp" />
 
             <View
@@ -230,17 +275,17 @@ tools:context=".NewOne">
                 android:id="@+id/来龙去脉"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:enabled="true"
-                android:minLines="1"
-                android:scrollbars="vertical"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:enabled="true"
+                android:gravity="center"
                 android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
+                android:minLines="1"
+                android:scrollbars="vertical"
                 android:text=""
-                android:background="#00000000"
                 android:textSize="15dp" />
 
         </LinearLayout>
@@ -248,10 +293,20 @@ tools:context=".NewOne">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/new_one_shape"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/kind_shape"
+            android:elevation="10dp"
+            android:translationZ="5dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="20dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/smssdk_black"
+            android:textSize="25sp"
             android:orientation="horizontal">
 
             <TextView
@@ -261,6 +316,7 @@ tools:context=".NewOne">
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="范例"
+                android:textColor="@color/smssdk_black"
                 android:textSize="20dp" />
 
             <View
@@ -276,17 +332,17 @@ tools:context=".NewOne">
                 android:id="@+id/范例"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:enabled="true"
-                android:minLines="1"
-                android:scrollbars="vertical"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:enabled="true"
+                android:gravity="center"
                 android:hint="点击编辑~~~(必填)"
                 android:inputType="textMultiLine"
+                android:minLines="1"
+                android:scrollbars="vertical"
                 android:text=""
-                android:background="#00000000"
                 android:textSize="15dp" />
 
         </LinearLayout>
@@ -298,6 +354,7 @@ tools:context=".NewOne">
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:textColor="@color/white"
             android:text="吐槽是有底线的~~~" />
 
     </LinearLayout>

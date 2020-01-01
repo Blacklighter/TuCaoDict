@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.myapplication.Login.Account;
 import com.example.myapplication.utils.Utils;
 import com.nex3z.flowlayout.FlowLayout;
 import com.squareup.picasso.Picasso;
@@ -36,19 +37,28 @@ public class SortPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //if(((MyApplication)getApplication()).getAccount().identity.equal("普通用户"))
-           // findViewById(R.id.increase).setVisibility(View.GONE);
-
         setContentView(R.layout.activity_sortpage);
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        FlowLayout all = (FlowLayout)findViewById(R.id.all);
+        all.removeAllViews();
+
+        if(Account.getAccount().getIdentity().equals("普通用户"))
+            findViewById(R.id.increase).setVisibility(View.GONE);
+
+
         ArrayList<String> names=getKinds();//用来记录从数据库得到的分类名
         ArrayList<String> img =getImgs();//用来记录从数据库得到的分类对应图片的地址
+
         for(int i = 0; i <  img.size(); i++){
             addOneKind(names.get(i),img.get(i));//将分类名和图片一一对应的加入布局。
         }
-
-
-
     }
 
     private ArrayList<String> getKinds(){
@@ -115,7 +125,6 @@ public class SortPage extends AppCompatActivity {
                 bundle.putCharSequence("classname",classname);
                 intent.putExtras(bundle);
                 startActivity(intent);
-                SortPage.this.finish();
             }
         });
 
@@ -126,7 +135,6 @@ public class SortPage extends AppCompatActivity {
             public void onClick(View v) {//设置点击每一个类的点击事件，跳转到分类页的下一个页面，分类列表页，并将点击的哪一个类传过去，在数据库中查找，动态创建新的列表页
                 Intent intent=new Intent(SortPage.this,IncreaseSort.class);
                 startActivity(intent);
-                SortPage.this.finish();
             }
         });
     }

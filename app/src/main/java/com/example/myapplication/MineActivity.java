@@ -44,10 +44,10 @@ public class MineActivity extends Activity {
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // 创建一个list集合
         Account account = Account.getAccount();
 
-        //测试待删
-        account.setHeadImage("http://www.blacklighter.cn/TuCaoDict/imgs/head_imgs/normal.jpg");
-        account.setNickName("网名");
-        account.setIdentity("管理员");
+//        //测试待删
+//        account.setHeadImage("http://www.blacklighter.cn/TuCaoDict/imgs/head_imgs/normal.jpg");
+//        account.setNickName("网名");
+//        account.setIdentity("管理员");
 
         CircleImageView headImg = (CircleImageView)findViewById(R.id.profile_image);
         TextView nickName = (TextView)findViewById(R.id.nick_name);

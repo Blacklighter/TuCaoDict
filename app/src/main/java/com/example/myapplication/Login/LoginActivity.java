@@ -52,6 +52,8 @@ public class LoginActivity extends Activity {
 
                             LemonBubble.showRight(LoginActivity.this,"登录成功",1500);
                             //跳转到首页
+                            account.setTelephone(telephone.getText().toString());
+                            account.setPassword(password.getText().toString());
                             account.refresh(new Handler(){
                                 @Override
                                 public void handleMessage(@NonNull Message msg) {

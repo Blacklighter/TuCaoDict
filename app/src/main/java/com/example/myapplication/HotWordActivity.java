@@ -119,6 +119,7 @@ public class HotWordActivity extends AppCompatActivity {
     //点击了“返回”按钮，调用clickReturnButton()方法
     public void clickReturnButton() {
         //返回前一个页面
+        HotWordActivity.this.finish();
     }
 
     //点击了添加按钮，调用clickWritingButton()方法

@@ -25,7 +25,7 @@ public class Review extends AppCompatActivity implements AdapterView.OnItemClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
-        addList(getText());
+
         Button backbutton=(Button)findViewById(R.id.backbutton2);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,9 +35,16 @@ public class Review extends AppCompatActivity implements AdapterView.OnItemClick
         });
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        addList(getText());
+    }
+
     private void addList(ArrayList<String> name){
         ListView mylistview=(ListView)findViewById(R.id.listview2);
-        ArrayAdapter<String> myAdapter=new ArrayAdapter<String>(Review.this,R.layout.reviewtext,R.id.textViewtwo,name);
+        ArrayAdapter<String> myAdapter=new ArrayAdapter<String>(Review.this,R.layout.card,R.id.card,name);
         mylistview.setAdapter(myAdapter);
         mylistview.setOnItemClickListener(this);
     }
@@ -62,12 +69,11 @@ public class Review extends AppCompatActivity implements AdapterView.OnItemClick
         Intent intent = new Intent(Review.this, check.class);
         Bundle bundle=new Bundle();
         String string;
-        TextView textView=(TextView)(view.findViewById(R.id.textViewtwo));
+        TextView textView=(TextView)(view.findViewById(R.id.card));
         string=(String)textView.getText();
         bundle.putCharSequence("word",string);
         intent.putExtras(bundle);
         startActivity(intent);
-        Review.this.finish();
     }
 }
 
