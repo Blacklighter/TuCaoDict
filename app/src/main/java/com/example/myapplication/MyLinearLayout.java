@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class MyLinearLayout {
 
+    private String module_name;
     private TextView headLine;
     private GoodOrBadButton goodButton,badButton;
     private LinearLayout linearLayout;
@@ -36,8 +37,9 @@ public class MyLinearLayout {
 
     public MyLinearLayout(LinearLayout linearLayout,TextView headLine, ImageButton goodButton,
                           TextView goodNumText, ImageButton badButton, TextView badNumText,
-                          HotWordActivity hotWordActivity,ViewPager viewPager){
+                          HotWordActivity hotWordActivity,ViewPager viewPager,String s){
 
+        this.setModule_name(s);
         this.setHotWordActivity(hotWordActivity);
         this.setLinearLayout(linearLayout);
         //this.setAdapater(adapater);
@@ -45,6 +47,7 @@ public class MyLinearLayout {
         this.badButton = new GoodOrBadButton(badButton,badNumText,hotWordActivity);
         this.setHeadLine(headLine);
         this.setViewPager(viewPager);
+
         //点击监听器
         this.goodButton.getImageButton().setOnClickListener(
                 new GoodButtonOnClickListener(hotWordActivity,this.goodButton));
@@ -52,10 +55,15 @@ public class MyLinearLayout {
                 new BadButtonOnClickListener(hotWordActivity,this.badButton));
         this.textViews = new TextViewAdapater(hotWordActivity);
         this.setJsonObjects(new ArrayList<JSONObject>());
+
     }
 
 
     //set、get
+    public void setModule_name(String module_name) {
+        this.module_name = module_name;
+    }
+
     public void setHeadLine(TextView headLine) {
         this.headLine = headLine;
     }
@@ -142,6 +150,10 @@ public class MyLinearLayout {
 
     public ArrayList<JSONObject> getJsonObjects() {
         return jsonObjects;
+    }
+
+    public String getModule_name() {
+        return module_name;
     }
 
 }
